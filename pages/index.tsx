@@ -1,10 +1,5 @@
+import Header from '../components/Header';
+
 export default function Home() {
-  return (
-    <div>
-      <div>
-        <h1>Test Heading</h1>
-        <button>Test</button>
-      </div>
-    </div>
-  );
+  return <Header heading={`Ryan Chase`} subHeading={`Full Stack Developer`} />;
 }

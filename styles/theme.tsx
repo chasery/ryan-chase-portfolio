@@ -1,4 +1,7 @@
 export const theme = {
-  colors: {},
-  icons: {},
+  colors: {
+    thunder: '#262324',
+    athensGrey: '#EAEBF0',
+    linkWater: '#F7F8FD',
+  },
 };
