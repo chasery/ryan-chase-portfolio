@@ -13,8 +13,8 @@ export function GlobalStyles() {
       styles={css`
         ${normalize}
         html, body, div#__next {
-          width: 100vw;
-          height: 100vh;
+          min-width: 100vw;
+          min-height: 100vh;
         }
         body {
           background-color: ${theme.colors.athensGrey};
