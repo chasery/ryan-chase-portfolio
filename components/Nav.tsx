@@ -31,6 +31,7 @@ export default function Nav() {
   `;
   const NavItemsList = styled.ul`
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding-left: 0;
     list-style: none;

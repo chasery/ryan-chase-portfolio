@@ -12,6 +12,10 @@ export function GlobalStyles() {
     <Global
       styles={css`
         ${normalize}
+        html, body, div#__next {
+          width: 100vw;
+          height: 100vh;
+        }
         body {
           background-color: ${theme.colors.athensGrey};
           color: ${theme.colors.thunder};
@@ -20,13 +24,12 @@ export function GlobalStyles() {
         }
         body > div#__next {
           display: grid;
-          grid-template-columns: [first-column] 1fr [second-column] 1fr [third-column] 1fr [column-end] 0;
-          grid-template-rows: [header-row] auto [body-row] auto [footer-row] 1fr [row-end] 0;
+          grid-template-columns: repeat(3, 33.333vw);
+          grid-template-rows: auto 1fr;
           grid-template-areas:
-            'header header header header'
-            'body body body body'
-            'footer footer footer footer';
-          min-height: 100vh;
+            'header header header'
+            'body body body'
+            'footer footer footer';
         }
         h1,
         h2,

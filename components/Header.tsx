@@ -1,8 +1,19 @@
 import styled from '@emotion/styled';
+import facepaint from 'facepaint';
 import Nav from './Nav';
 
 export default function Header(props) {
   const { heading, subHeading } = props;
+
+  // Media query breakpoints
+  const breakpoints = [36, 48, 62, 75];
+  const mq = facepaint(breakpoints.map((bp) => `@media (min-width: ${bp}rem)`));
+  // const Header = styled.header(() =>
+  //   mq({
+  //     gridArea: 'header',
+  //     backgroundColor: ['green', 'gray', 'hotpink'],
+  //   })
+  // );
 
   // Component styling
   const Header = styled.header`
