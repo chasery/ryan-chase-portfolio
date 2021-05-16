@@ -30,7 +30,7 @@ export default function Footer(props) {
     mq({
       marginLeft: '0.75rem',
       fontSize: ['1rem', '1.125rem'],
-      fontWeight: '400',
+      fontWeight: '500',
       letterSpacing: ['0.125rem', '0.25rem'],
       textTransform: 'uppercase',
     })
