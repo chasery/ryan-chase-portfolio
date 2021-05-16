@@ -18,6 +18,16 @@ export function GlobalStyles() {
           font-family: 'Roboto';
           font-weight: 400;
         }
+        body > div#__next {
+          display: grid;
+          grid-template-columns: [first-column] 1fr [second-column] 1fr [third-column] 1fr [column-end] 0;
+          grid-template-rows: [header-row] auto [body-row] auto [footer-row] 1fr [row-end] 0;
+          grid-template-areas:
+            'header header header header'
+            'body body body body'
+            'footer footer footer footer';
+          min-height: 100vh;
+        }
         h1,
         h2,
         h3,

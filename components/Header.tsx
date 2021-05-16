@@ -6,7 +6,7 @@ export default function Header(props) {
 
   // Component styling
   const Header = styled.header`
-    margin: 8rem 0 0 8rem;
+    grid-area: header;
   `;
   const Heading = styled.h1`
     line-height: 4rem;
@@ -21,30 +21,11 @@ export default function Header(props) {
     letter-spacing: 0.25rem;
   `;
 
-  const pages = [
-    {
-      path: '/',
-      name: 'Home',
-    },
-    {
-      path: '/about',
-      name: 'About',
-    },
-    {
-      path: '/skills',
-      name: 'Skills',
-    },
-    {
-      path: '/work',
-      name: 'Work',
-    },
-  ];
-
   return (
     <Header>
       <Heading>{heading}</Heading>
       <SubHeading>{subHeading}</SubHeading>
-      <Nav pages={pages} />
+      <Nav />
     </Header>
   );
 }
