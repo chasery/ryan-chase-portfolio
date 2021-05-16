@@ -3,7 +3,6 @@ import normalize from './normalize';
 import '@fontsource/antonio/700.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
 
 export function GlobalStyles() {
   const theme: any = useTheme();
@@ -12,11 +11,13 @@ export function GlobalStyles() {
     <Global
       styles={css`
         ${normalize}
-        html, body, div#__next {
+        html, body {
           min-width: 100vw;
           min-height: 100vh;
         }
         body {
+          display: flex;
+          justify-content: center;
           background-color: ${theme.colors.athensGrey};
           color: ${theme.colors.thunder};
           font-family: 'Roboto';
@@ -24,12 +25,23 @@ export function GlobalStyles() {
         }
         body > div#__next {
           display: grid;
-          grid-template-columns: repeat(3, 33.333vw);
+          grid-template-columns: repeat(3, 33.333%);
           grid-template-rows: auto 1fr;
           grid-template-areas:
             'header header header'
             'body body body'
             'footer footer footer';
+          width: 100%;
+
+          @media (min-width: 48rem) {
+            width: 44rem;
+          }
+          @media (min-width: 62rem) {
+            width: 58rem;
+          }
+          @media (min-width: 75rem) {
+            width: 71rem;
+          }
         }
         h1,
         h2,

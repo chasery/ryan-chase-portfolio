@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import mq from '../services/responsive';
 import Icon from './Icon';
 
 export default function SocialMedia() {
@@ -39,20 +39,25 @@ export default function SocialMedia() {
 
   // Component styling
   const theme: any = useTheme();
-
-  // Social Media
-  const SocialMedia = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-  `;
-  const SocialMediaItem = styled.li`
-    & + li {
-      margin-left: 4rem;
-    }
-  `;
+  const SocialMedia = styled.ul(() =>
+    mq({
+      display: 'flex',
+      flexWrap: 'wrap',
+      flexDirection: ['column', 'row'],
+      margin: '0',
+      paddingLeft: '0',
+      listStyle: 'none',
+    })
+  );
+  const SocialMediaItem = styled.li(() =>
+    mq({
+      padding: ['0.5rem', '0'],
+      '& + li': {
+        marginLeft: ['0', '3rem', '4rem'],
+        borderTop: [`solid 0.125rem ${theme.colors.mischka}`, 'none'],
+      },
+    })
+  );
   const SocialMediaLink = styled.a`
     padding-left: 0;
     color: ${theme.colors.thunder};
@@ -66,18 +71,16 @@ export default function SocialMedia() {
   const renderNavItems = (items) => {
     return items.map((item, i) => (
       <SocialMediaItem key={i}>
-        <Link href={item.path} passHref>
-          <SocialMediaLink>
-            <Icon
-              name={item.name}
-              path={item.icon.path}
-              alt={item.icon.alt}
-              width={item.icon.width}
-              height={item.icon.height}
-              size={'small'}
-            />
-          </SocialMediaLink>
-        </Link>
+        <SocialMediaLink href={item.path} target='_blank'>
+          <Icon
+            name={item.name}
+            path={item.icon.path}
+            alt={item.icon.alt}
+            width={item.icon.width}
+            height={item.icon.height}
+            size={'small'}
+          />
+        </SocialMediaLink>
       </SocialMediaItem>
     ));
   };

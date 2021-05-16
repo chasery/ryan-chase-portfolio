@@ -1,6 +1,7 @@
 export const theme = {
   colors: {
     thunder: '#262324',
+    mischka: '#E0E1E5',
     athensGrey: '#EAEBF0',
     linkWater: '#F7F8FD',
   },
