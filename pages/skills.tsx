@@ -1,7 +1,10 @@
+import styled from '@emotion/styled';
+import mq from '../services/responsive';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import IconGrid from '../components/IconGrid';
 import Icon from '../components/Icon';
+import Button from '../components/Button';
 
 export default function Skills() {
   const data = [
@@ -191,6 +194,23 @@ export default function Skills() {
     },
   ];
   const renderContent = (data) => {
+    const ButtonWrapper = styled.div(() =>
+      mq({
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: ['3.5rem', '3.75rem', '4rem'],
+        padding: ['0 1rem', '0 2rem', '0'],
+
+        '& > a': {
+          minWidth: [
+            'calc(50% - 2rem)',
+            'calc(50% - 2rem)',
+            'calc(33.333% - 2rem)',
+          ],
+          flexGrow: '0',
+        },
+      })
+    );
     return data.map((section) => {
       const skills = section.skills.map((skill) => (
         <li>
@@ -209,6 +229,9 @@ export default function Skills() {
           <h3>{section.title}</h3>
           <p>{section.text}</p>
           <IconGrid>{skills}</IconGrid>
+          <ButtonWrapper>
+            <Button url='/ryan-chase-resume.pdf' text='Download Resume' />
+          </ButtonWrapper>
         </section>
       );
     });

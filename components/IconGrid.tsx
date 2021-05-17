@@ -17,6 +17,7 @@ export default function IconGrid(props) {
         '33.333% 33.333% 33.333%',
       ],
       marginTop: ['3.5rem', '3.75rem', '4rem'],
+      marginBottom: '0',
       padding: ['0 1rem', '0 2rem', '0'],
       listStyle: 'none',
       transition: theme.transitions.out,
