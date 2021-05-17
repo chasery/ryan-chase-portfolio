@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 export default function Home() {
   return (
     <>
-      <Header heading={`Ryan Chase`} subHeading={`Full Stack Developer`} />
+      <Header subHeading={`Full Stack Developer`} />
       <Footer />
     </>
   );

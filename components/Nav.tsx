@@ -30,6 +30,7 @@ export default function Nav() {
         '1.75rem 0 0 0.125rem',
         '2rem 0 0 0.125rem',
       ],
+      transition: theme.transitions.out,
     })
   );
   const NavItemsList = styled.ul`

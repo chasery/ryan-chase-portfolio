@@ -4,14 +4,14 @@ import mq from '../services/responsive';
 import Nav from './Nav';
 
 export default function Header(props) {
-  const { heading, subHeading } = props;
+  const { subHeading } = props;
 
   // Component styling
   const theme: any = useTheme();
   const Header = styled.header(() =>
     mq({
       gridArea: 'header',
-      padding: ['1rem 1rem 0', '2rem 0 0', '4rem 0 0', '8rem 0 0'],
+      padding: ['1rem 1rem 0', '2rem 2rem 0', '4rem 0 0', '8rem 0 0'],
       transition: theme.transitions.out,
     })
   );
@@ -36,7 +36,7 @@ export default function Header(props) {
 
   return (
     <Header>
-      <Heading>{heading}</Heading>
+      <Heading>Ryan Chase</Heading>
       <SubHeading>{subHeading}</SubHeading>
       <Nav />
     </Header>

@@ -1,11 +1,9 @@
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export default function Home() {
   return (
     <>
-      <Header heading={`Ryan Chase`} subHeading={`What I am Doing`} />
-      <Footer />
+      <Header subHeading={`What I have Worked on`} />
     </>
   );
 }

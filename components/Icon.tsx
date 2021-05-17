@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import mq from '../services/responsive';
 import Image from 'next/image';
 
-export default function Footer(props) {
-  const { name, path, alt, width, height, size } = props;
+export default function Icon(props) {
+  const { name, path, alt, width, height, small } = props;
 
   // Component styling
   const theme: any = useTheme();
@@ -17,8 +17,8 @@ export default function Footer(props) {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      width: `${size === 'small' ? '3rem' : '6rem'}`,
-      height: `${size === 'small' ? '3rem' : '6rem'}`,
+      width: `${small ? '3rem' : '6rem'}`,
+      height: `${small ? '3rem' : '6rem'}`,
 
       '& img': {
         transform: ['scale(0.875)', 'scale(1)'],
@@ -29,10 +29,11 @@ export default function Footer(props) {
   const IconLabel = styled.span(() =>
     mq({
       marginLeft: '0.75rem',
-      fontSize: ['1rem', '1.125rem'],
+      fontSize: ['1rem'],
       fontWeight: '500',
-      letterSpacing: ['0.125rem', '0.25rem'],
+      letterSpacing: ['0.25rem', '0.125rem', '0.125rem', '0.25rem'],
       textTransform: 'uppercase',
+      transition: theme.transitions.out,
     })
   );
 
