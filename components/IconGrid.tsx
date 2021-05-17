@@ -24,7 +24,7 @@ export default function IconGrid(props) {
         borderBottom: `solid 0.125rem ${theme.colors.mischka}`,
         borderRight: ['none', `solid 0.125rem ${theme.colors.mischka}`],
 
-        '&:nth-child(even)': {
+        '&:nth-of-type(even)': {
           borderRight:
             maxColumns === 3
               ? [
@@ -35,7 +35,7 @@ export default function IconGrid(props) {
                 ]
               : 'none',
         },
-        '&:nth-child(3n)': {
+        '&:nth-of-type(3n)': {
           borderRight:
             maxColumns === 3
               ? [
@@ -46,16 +46,16 @@ export default function IconGrid(props) {
                 ]
               : null,
         },
-        '&:nth-child(5)': {
+        '&:nth-of-type(5)': {
           borderBottom:
             maxColumns === 2
               ? [`solid 0.125rem ${theme.colors.mischka}`, 'none']
               : null,
         },
-        '&:nth-child(6)': {
+        '&:nth-of-type(6)': {
           borderRight: ['inherit', `inherit`, `inherit`, 'inherit'],
         },
-        '&:nth-child(7), &:nth-child(8)': {
+        '&:nth-of-type(7), &:nth-of-type(8)': {
           borderBottom: [
             `solid 0.125rem ${theme.colors.mischka}`,
             `solid 0.125rem ${theme.colors.mischka}`,

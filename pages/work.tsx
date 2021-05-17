@@ -7,20 +7,20 @@ import Main from '../components/Main';
 import IconGrid from '../components/IconGrid';
 import Icon from '../components/Icon';
 import Button from '../components/Button';
+import image from 'next/image';
 
 export default function Work() {
   const data = [
     {
       title: 'Retrio',
-      text: `It’s that goal of finding the perfect solution for his end users’,
-      that motivates Ryan. Staying in tune with the latest software
-      trends, he actively searches for ways to employ modern approaches to
-      his user centric solutions. Ryan is very passionate about usability
-      and you shouldn’t be surprised if you hear him exclaiming “That’s a
-      bad user experience!”`,
+      text: `With Agile teams making an in-office to work-from-home shift, Retrio makes this transition easier by creating an online communal space to collaborate on what went well, what didn't go well, things to try, and shout outs, during your sprint.`,
       projectUrls: {
         github: 'https://github.com/chasery/retrio',
         live: 'https://retrio-chasery.vercel.app/',
+      },
+      image: {
+        path: '/images/retrio.jpg',
+        alt: '',
       },
       skills: [
         {
@@ -81,14 +81,13 @@ export default function Work() {
     },
     {
       title: 'Ryan Chase Portfolio',
-      text: `It’s that goal of finding the perfect solution for his end users’,
-      that motivates Ryan. Staying in tune with the latest software
-      trends, he actively searches for ways to employ modern approaches to
-      his user centric solutions. Ryan is very passionate about usability
-      and you shouldn’t be surprised if you hear him exclaiming “That’s a
-      bad user experience!”`,
+      text: `Inspired by his dabblings in ReactJs, among many other technologies in Thinkful's code school, Ryan has set out on an adventure to rebrand his personal portfolio. With an emphasis on responsive and mobile first development, Ryan has created a portfolio that demonstrates simplicity and elegance in both design and development.`,
       projectUrls: {
         github: 'https://github.com/chasery/ryan-chase-portfolio',
+      },
+      image: {
+        path: '/images/ryan-chase-portfolio.jpg',
+        alt: '',
       },
       skills: [
         {
@@ -149,15 +148,14 @@ export default function Work() {
     },
     {
       title: 'Racking Up',
-      text: `It’s that goal of finding the perfect solution for his end users’,
-      that motivates Ryan. Staying in tune with the latest software
-      trends, he actively searches for ways to employ modern approaches to
-      his user centric solutions. Ryan is very passionate about usability
-      and you shouldn’t be surprised if you hear him exclaiming “That’s a
-      bad user experience!”`,
+      text: `Racking Up helps you organize your upcoming wardrobe purchases with a custom rack system. With a little help from the app, you can curate lists of those clothing items you fancy from any online retailer.`,
       projectUrls: {
         github: 'https://github.com/chasery/racking-up',
         live: 'https://racking-up-chasery.vercel.app/',
+      },
+      image: {
+        path: '/images/racking-up.jpg',
+        alt: '',
       },
       skills: [
         {
@@ -220,6 +218,7 @@ export default function Work() {
 
   const renderContent = (data) => {
     return data.map((section, i) => {
+      // Handle project skills
       const skills = section.skills.map((skill, j) => (
         <li key={j}>
           <Icon
@@ -231,30 +230,25 @@ export default function Work() {
           />
         </li>
       ));
-      const projectUrls = Object.keys(section.projectUrls).map((key, k) => {
+
+      // Handle project URLs
+      const projectUrls = [];
+      for (const [key, value] of Object.entries(section.projectUrls)) {
         if (key === 'github')
-          return (
-            <Button
-              key={k}
-              url='/ryan-chase-resume.pdf'
-              text='View on GitHub'
-            />
+          projectUrls.push(
+            <Button key={key} url={value} text='View on GitHub' />
           );
 
         if (key === 'live')
-          return (
-            <Button key={k} url='/ryan-chase-resume.pdf' text='View App' />
-          );
-
-        return;
-      });
+          projectUrls.push(<Button key={key} url={value} text='View App' />);
+      }
 
       return (
         <Section key={i}>
           <ImageWrapper>
             <Image
-              src='/images/porsche.jpg'
-              alt='Some sort of text'
+              src={section.image.path}
+              alt={section.image.alt}
               layout='fill'
               objectFit='cover'
             />
@@ -331,7 +325,7 @@ export default function Work() {
 
   return (
     <>
-      <Header subHeading={`What I Can Do For You`} />
+      <Header subHeading={`What I Have Been Doing`} />
       <Main>{data && renderContent(data)}</Main>
     </>
   );

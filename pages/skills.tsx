@@ -11,12 +11,7 @@ export default function Skills() {
   const data = [
     {
       title: 'Development',
-      text: `It’s that goal of finding the perfect solution for his end users’,
-      that motivates Ryan. Staying in tune with the latest software
-      trends, he actively searches for ways to employ modern approaches to
-      his user centric solutions. Ryan is very passionate about usability
-      and you shouldn’t be surprised if you hear him exclaiming “That’s a
-      bad user experience!”`,
+      text: `Ryan is motivated to find the perfect solution for his end users. Staying in tune with the latest web development trends, he actively searches for ways to employ modern tools and frameworks in the apps he creates. Fresh out of Thinkful's code school, here is what he is proficient in.`,
       skills: [
         {
           icon: {
@@ -103,12 +98,7 @@ export default function Skills() {
     },
     {
       title: 'UX Design',
-      text: `It’s that goal of finding the perfect solution for his end users’,
-      that motivates Ryan. Staying in tune with the latest software
-      trends, he actively searches for ways to employ modern approaches to
-      his user centric solutions. Ryan is very passionate about usability
-      and you shouldn’t be surprised if you hear him exclaiming “That’s a
-      bad user experience!”`,
+      text: `Ryan currently works as a Senior User Experience designer for a healthcare organization, where he leads usability for their mobile app. With a high awareness of usability as well as software development, Ryan brings a unique set of tools to any team.`,
       skills: [
         {
           icon: {
@@ -196,9 +186,9 @@ export default function Skills() {
   ];
 
   const renderContent = (data) => {
-    return data.map((section) => {
-      const skills = section.skills.map((skill) => (
-        <li>
+    return data.map((section, i) => {
+      const skills = section.skills.map((skill, j) => (
+        <li key={j}>
           <Icon
             name={skill.name}
             path={skill.icon.path}
@@ -210,12 +200,12 @@ export default function Skills() {
       ));
 
       return (
-        <section>
+        <section key={i}>
           <h3>{section.title}</h3>
           <p>{section.text}</p>
           <IconGrid maxColumns={3}>{skills}</IconGrid>
           <ButtonWrapper>
-            <Button url='/ryan-chase-resume.pdf' text='Download Resume' />
+            <Button url='/pdf/ryan-chase-resume.pdf' text='Download Resume' />
           </ButtonWrapper>
         </section>
       );
