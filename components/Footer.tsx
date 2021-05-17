@@ -11,7 +11,7 @@ export default function Footer() {
       gridArea: 'footer',
       alignSelf: 'end',
       marginLeft: '0.125rem',
-      padding: ['0', '0 0 2rem', '0 0 4rem', '0 0 8rem'],
+      padding: ['0', '0 2rem 2rem', '0 0 4rem', '0 0 8rem'],
       transition: theme.transitions.out,
     })
   );

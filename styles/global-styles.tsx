@@ -3,6 +3,7 @@ import normalize from './normalize';
 import '@fontsource/antonio/700.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
 
 export function GlobalStyles() {
   const theme: any = useTheme();
@@ -29,7 +30,7 @@ export function GlobalStyles() {
           grid-template-rows: auto 1fr;
           grid-template-areas:
             'header header header'
-            'body body body'
+            'main main main'
             'footer footer footer';
           width: 100%;
 
@@ -54,9 +55,13 @@ export function GlobalStyles() {
           font-weight: 700;
           text-transform: uppercase;
         }
-        h2 {
+        h2,
+        h3 {
           font-weight: 300;
           text-transform: uppercase;
+        }
+        p {
+          margin: 0;
         }
       `}
     />

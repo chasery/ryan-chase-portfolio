@@ -52,6 +52,8 @@ export default function SocialMedia() {
   const SocialMediaItem = styled.li(() =>
     mq({
       padding: ['0.5rem', '0'],
+      transition: theme.transitions.out,
+
       '& + li': {
         marginLeft: ['0', '3rem', '4rem'],
         borderTop: [`solid 0.125rem ${theme.colors.mischka}`, 'none'],
@@ -78,7 +80,7 @@ export default function SocialMedia() {
             alt={item.icon.alt}
             width={item.icon.width}
             height={item.icon.height}
-            size={'small'}
+            small={true}
           />
         </SocialMediaLink>
       </SocialMediaItem>

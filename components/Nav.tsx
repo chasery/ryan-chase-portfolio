@@ -12,10 +12,6 @@ export default function Nav() {
       name: 'Home',
     },
     {
-      path: '/about',
-      name: 'About',
-    },
-    {
       path: '/skills',
       name: 'Skills',
     },
@@ -34,6 +30,7 @@ export default function Nav() {
         '1.75rem 0 0 0.125rem',
         '2rem 0 0 0.125rem',
       ],
+      transition: theme.transitions.out,
     })
   );
   const NavItemsList = styled.ul`
@@ -54,7 +51,7 @@ export default function Nav() {
       padding: ['0.5rem 0.75rem', '0.75rem 1.125rem', '1rem 1.5rem'],
       color: theme.colors.thunder,
       fontSize: ['1rem', '1.125rem', '1.25rem'],
-      fontWeight: '400',
+      fontWeight: '500',
       letterSpacing: ['0.125rem', '0.25rem'],
       textDecoration: 'none',
       textTransform: 'uppercase',
