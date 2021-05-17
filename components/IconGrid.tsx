@@ -18,13 +18,13 @@ export default function IconGrid(props) {
       ],
       marginTop: ['3.5rem', '3.75rem', '4rem'],
       marginBottom: '0',
-      padding: ['0 1rem', '0 2rem', '0'],
+      padding: ['0', '0 2rem', '0'],
       listStyle: 'none',
       transition: theme.transitions.out,
 
       '& > li': {
         borderBottom: `solid 0.125rem ${theme.colors.mischka}`,
-        borderRight: `solid 0.125rem ${theme.colors.mischka}`,
+        borderRight: ['none', `solid 0.125rem ${theme.colors.mischka}`],
 
         '&:nth-child(even)': {
           borderRight: [
