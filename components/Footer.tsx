@@ -10,7 +10,7 @@ export default function Footer() {
     mq({
       gridArea: 'footer',
       alignSelf: 'end',
-      marginLeft: '0.125rem',
+      marginLeft: ['0', '0.125rem'],
       padding: ['0', '0 2rem 2rem', '0 0 4rem', '0 0 8rem'],
       transition: theme.transitions.out,
     })

@@ -6,8 +6,8 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 import IconGrid from '../components/IconGrid';
 import Icon from '../components/Icon';
+import ButtonGroup from 'components/ButtonGroup';
 import Button from '../components/Button';
-import image from 'next/image';
 
 export default function Work() {
   const data = [
@@ -258,12 +258,12 @@ export default function Work() {
             <p>{section.text}</p>
             <IconGrid maxColumns={2}>{skills}</IconGrid>
             {projectUrls.length === 1 ? (
-              <ButtonWrapper className='singleButton'>
-                <div className='filler'></div>
+              <ButtonGroup single={true} alignment='end'>
+                <div className='Filler'></div>
                 {projectUrls}
-              </ButtonWrapper>
+              </ButtonGroup>
             ) : (
-              <ButtonWrapper>{projectUrls}</ButtonWrapper>
+              <ButtonGroup single={false}>{projectUrls}</ButtonGroup>
             )}
           </div>
         </Section>
@@ -297,28 +297,6 @@ export default function Work() {
 
       '& > *': {
         position: 'absolute',
-      },
-    })
-  );
-  const ButtonWrapper = styled.div(() =>
-    mq({
-      display: 'grid',
-      gridTemplateColumns: ['1fr', '1fr', '1fr', '1fr 1fr'],
-      gridGap: '2rem',
-      justifyItems: 'center',
-      marginTop: ['3.5rem', '3.75rem', '4rem'],
-      padding: ['0 1rem', '0 2rem', '0'],
-      transition: theme.transitions.out,
-
-      '&.singleButton': {
-        gridGap: ['0', '0', '0', '2rem'],
-        transition: theme.transitions.out,
-      },
-
-      '& > a': {
-        minWidth: ['50%', '50%', '50%', 'calc(100% - 4rem)'],
-        maxWidth: ['50%', '50%', '50%', 'calc(100% - 4rem)'],
-        transition: theme.transitions.out,
       },
     })
   );

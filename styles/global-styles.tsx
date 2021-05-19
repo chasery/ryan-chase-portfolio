@@ -12,9 +12,13 @@ export function GlobalStyles() {
     <Global
       styles={css`
         ${normalize}
-        html, body {
+        html {
+          height: -webkit-fill-available;
+        }
+        body {
           min-width: 100vw;
           min-height: 100vh;
+          min-height: -webkit-fill-available;
         }
         body {
           display: flex;

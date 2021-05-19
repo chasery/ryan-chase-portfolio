@@ -1,10 +1,8 @@
-import { useTheme } from '@emotion/react';
-import styled from '@emotion/styled';
-import mq from '../services/responsive';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import IconGrid from '../components/IconGrid';
 import Icon from '../components/Icon';
+import ButtonGroup from 'components/ButtonGroup';
 import Button from '../components/Button';
 
 export default function Skills() {
@@ -204,34 +202,13 @@ export default function Skills() {
           <h3>{section.title}</h3>
           <p>{section.text}</p>
           <IconGrid maxColumns={3}>{skills}</IconGrid>
-          <ButtonWrapper>
+          <ButtonGroup single={true}>
             <Button url='/pdf/ryan-chase-resume.pdf' text='Download Resume' />
-          </ButtonWrapper>
+          </ButtonGroup>
         </section>
       );
     });
   };
-
-  // Page styles
-  const theme: any = useTheme();
-  const ButtonWrapper = styled.div(() =>
-    mq({
-      display: 'flex',
-      justifyContent: 'center',
-      marginTop: ['3.5rem', '3.75rem', '4rem'],
-      padding: ['0 1rem', '0 2rem', '0'],
-      transition: theme.transitions.out,
-
-      '& > a': {
-        minWidth: [
-          'calc(50% - 2rem)',
-          'calc(50% - 2rem)',
-          'calc(33.333% - 2rem)',
-        ],
-        flexGrow: '0',
-      },
-    })
-  );
 
   return (
     <>

@@ -12,6 +12,10 @@ export default function Nav() {
       name: 'Home',
     },
     {
+      path: '/about',
+      name: 'About',
+    },
+    {
       path: '/skills',
       name: 'Skills',
     },
