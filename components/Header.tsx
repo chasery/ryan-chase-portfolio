@@ -10,7 +10,7 @@ export default function Header(props) {
   const theme: any = useTheme();
   const Header = styled.header(() =>
     mq({
-      gridArea: 'header',
+      flexGrow: 0,
       padding: ['1rem 1rem 0', '2rem 2rem 0', '4rem 0 0', '8rem 0 0'],
       transition: theme.transitions.out,
     })

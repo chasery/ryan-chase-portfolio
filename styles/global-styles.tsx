@@ -16,26 +16,21 @@ export function GlobalStyles() {
           height: -webkit-fill-available;
         }
         body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           min-width: 100vw;
           min-height: 100vh;
-          min-height: -webkit-fill-available;
-        }
-        body {
-          display: flex;
-          justify-content: center;
+          /* min-height: -webkit-fill-available; */
           background-color: ${theme.colors.athensGrey};
           color: ${theme.colors.thunder};
           font-family: 'Roboto';
           font-weight: 400;
         }
         body > div#__next {
-          display: grid;
-          grid-template-columns: repeat(3, 33.333%);
-          grid-template-rows: auto 1fr;
-          grid-template-areas:
-            'header header header'
-            'main main main'
-            'footer footer footer';
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
           width: 100%;
 
           @media (min-width: 48rem) {

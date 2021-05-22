@@ -1,5 +1,6 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import { work } from '../data';
 import Image from 'next/image';
 import mq from '../services/responsive';
 import Header from '../components/Header';
@@ -9,213 +10,15 @@ import Icon from '../components/Icon';
 import ButtonGroup from 'components/ButtonGroup';
 import Button from '../components/Button';
 
-export default function Work() {
-  const data = [
-    {
-      title: 'Retrio',
-      text: `With Agile teams making an in-office to work-from-home shift, Retrio makes this transition easier by creating an online communal space to collaborate on what went well, what didn't go well, things to try, and shout outs, during your sprint.`,
-      projectUrls: {
-        github: 'https://github.com/chasery/retrio',
-        live: 'https://retrio-chasery.vercel.app/',
-      },
-      image: {
-        path: '/images/retrio.jpg',
-        alt: '',
-      },
-      skills: [
-        {
-          icon: {
-            path: '/icons/react-js.svg',
-            alt: '',
-            width: '35px',
-            height: '32px',
-          },
-          name: 'ReactJS',
-        },
-        {
-          icon: {
-            path: '/icons/node-js.svg',
-            alt: '',
-            width: '28px',
-            height: '32px',
-          },
-          name: 'NodeJS',
-        },
-        {
-          icon: {
-            path: '/icons/javascript.svg',
-            alt: '',
-            width: '28px',
-            height: '28px',
-          },
-          name: 'JavaScript',
-        },
-        {
-          icon: {
-            path: '/icons/postgresql.svg',
-            alt: '',
-            width: '30px',
-            height: '32px',
-          },
-          name: 'PostgreSQL',
-        },
-        {
-          icon: {
-            path: '/icons/testing.svg',
-            alt: '',
-            width: '28px',
-            height: '32px',
-          },
-          name: 'Testing',
-        },
-        {
-          icon: {
-            path: '/icons/git.svg',
-            alt: '',
-            width: '32px',
-            height: '32px',
-          },
-          name: 'Git',
-        },
-      ],
+export const getStaticProps = async () => {
+  return {
+    props: {
+      data: work,
     },
-    {
-      title: 'Ryan Chase Portfolio',
-      text: `Inspired by his dabblings in ReactJs, among many other technologies in Thinkful's code school, Ryan has set out on an adventure to rebrand his personal portfolio. With an emphasis on responsive and mobile first development, Ryan has created a portfolio that demonstrates simplicity and elegance in both design and development.`,
-      projectUrls: {
-        github: 'https://github.com/chasery/ryan-chase-portfolio',
-      },
-      image: {
-        path: '/images/ryan-chase-portfolio.jpg',
-        alt: '',
-      },
-      skills: [
-        {
-          icon: {
-            path: '/icons/react-js.svg',
-            alt: '',
-            width: '35px',
-            height: '32px',
-          },
-          name: 'ReactJS',
-        },
-        {
-          icon: {
-            path: '/icons/javascript.svg',
-            alt: '',
-            width: '28px',
-            height: '28px',
-          },
-          name: 'JavaScript',
-        },
-        {
-          icon: {
-            path: '/icons/html-5.svg',
-            alt: '',
-            width: '25px',
-            height: '28px',
-          },
-          name: 'HTML5',
-        },
-        {
-          icon: {
-            path: '/icons/css-3.svg',
-            alt: '',
-            width: '25px',
-            height: '28px',
-          },
-          name: 'CSS3',
-        },
-        {
-          icon: {
-            path: '/icons/emotion.svg',
-            alt: '',
-            width: '28px',
-            height: '28px',
-          },
-          name: 'Emotion',
-        },
-        {
-          icon: {
-            path: '/icons/typescript.svg',
-            alt: '',
-            width: '28px',
-            height: '28px',
-          },
-          name: 'Typescript',
-        },
-      ],
-    },
-    {
-      title: 'Racking Up',
-      text: `Racking Up helps you organize your upcoming wardrobe purchases with a custom rack system. With a little help from the app, you can curate lists of those clothing items you fancy from any online retailer.`,
-      projectUrls: {
-        github: 'https://github.com/chasery/racking-up',
-        live: 'https://racking-up-chasery.vercel.app/',
-      },
-      image: {
-        path: '/images/racking-up.jpg',
-        alt: '',
-      },
-      skills: [
-        {
-          icon: {
-            path: '/icons/react-js.svg',
-            alt: '',
-            width: '35px',
-            height: '32px',
-          },
-          name: 'ReactJS',
-        },
-        {
-          icon: {
-            path: '/icons/node-js.svg',
-            alt: '',
-            width: '28px',
-            height: '32px',
-          },
-          name: 'NodeJS',
-        },
-        {
-          icon: {
-            path: '/icons/javascript.svg',
-            alt: '',
-            width: '28px',
-            height: '28px',
-          },
-          name: 'JavaScript',
-        },
-        {
-          icon: {
-            path: '/icons/postgresql.svg',
-            alt: '',
-            width: '30px',
-            height: '32px',
-          },
-          name: 'PostgreSQL',
-        },
-        {
-          icon: {
-            path: '/icons/testing.svg',
-            alt: '',
-            width: '28px',
-            height: '32px',
-          },
-          name: 'Testing',
-        },
-        {
-          icon: {
-            path: '/icons/git.svg',
-            alt: '',
-            width: '32px',
-            height: '32px',
-          },
-          name: 'Git',
-        },
-      ],
-    },
-  ];
+  };
+};
 
+export default function Work({ data }) {
   // Page styles
   const theme: any = useTheme();
   const Section = styled.section(() =>
@@ -234,9 +37,9 @@ export default function Work() {
   const ProjectImage = styled.div(() =>
     mq({
       position: 'relative',
-      width: ['100%', 'calc(100% - 4rem)', '100%', 'calc(100% - 2rem)'],
+      width: ['100%', 'calc(100% - 4rem)', '100%', 'calc(100% - 4rem)'],
       height: ['12rem', '12rem', '12rem', 'auto'],
-      margin: ['0', '0 2rem', '0', '0 2rem 0 0'],
+      margin: ['0', '0 2rem', '0', '0 4rem 0 0'],
       overflow: 'hidden',
       transition: theme.transitions.out,
 
@@ -304,7 +107,7 @@ export default function Work() {
   return (
     <>
       <Header subHeading={`What I Have Been Doing`} />
-      <Main>{data && renderContent(data)}</Main>
+      <Main>{work && renderContent(work)}</Main>
     </>
   );
 }

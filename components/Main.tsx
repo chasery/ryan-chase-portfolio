@@ -9,7 +9,6 @@ export default function Main(props) {
   const theme: any = useTheme();
   const Main = styled.main(() =>
     mq({
-      gridArea: 'main',
       transition: theme.transitions.out,
 
       '& section': {

@@ -1,50 +1,20 @@
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import { about } from '../data';
 import Image from 'next/image';
 import mq from '../services/responsive';
 import Header from '../components/Header';
 import Main from '../components/Main';
 
-export default function About() {
-  const data = {
-    title: 'Hey there!',
-    text: `I am Ryan and I love tackling problems from conceptualization to implementation. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise when ever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and life long learning.
-    Currently, I am working full time as a Sr. UX Designer while moonlighting in Thinkful's Software Engineering program. My current path has me leading a team by driving an empathic approach to software development while cultivating the skills necessary to be able to construct my ideas. With a background in both design and development, I am able to foster a collaborative environment between the two camps. My life time of experience in creativity and problem solving allows me to bring a versatile set of tools to your team.
-    My specialties are HTML, CSS, JavaScript, ReactJS, Node.JS, PostgreSQL, Deployment, Version Control, Story Boarding, User Flows, Prototyping, and Usability Testing.`,
-    image: {
-      path: '/images/ryan-chase@2x.jpg',
-      alt: '',
+export const getStaticProps = async () => {
+  return {
+    props: {
+      data: about,
     },
-    details: [
-      {
-        label: 'Status',
-        value: 'Available',
-      },
-      {
-        label: 'Location',
-        value: 'Portland, OR',
-      },
-      {
-        label: 'Tech Exp.',
-        value: '10yrs+',
-      },
-      {
-        label: 'Pref. Role',
-        value: 'Front-End Dev',
-      },
-      {
-        label: 'Interests',
-        value: 'ReactJs',
-      },
-      {
-        value: 'Components',
-      },
-      {
-        value: 'CSS-in-JS',
-      },
-    ],
   };
+};
 
+export default function About({ data }) {
   // Page styles
   const theme: any = useTheme();
   const Section = styled.section(() =>
@@ -63,6 +33,7 @@ export default function About() {
   const AboutText = styled.div(() =>
     mq({
       marginRight: ['0', '0', '0', '4rem'],
+      transition: theme.transitions.out,
     })
   );
   const AboutAside = styled.aside(() =>
