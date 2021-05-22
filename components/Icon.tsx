@@ -29,7 +29,7 @@ export default function Icon(props) {
   const IconLabel = styled.span(() =>
     mq({
       marginLeft: '0.75rem',
-      fontSize: ['1rem'],
+      fontSize: '1rem',
       fontWeight: '500',
       letterSpacing: ['0.25rem', '0.125rem', '0.125rem', '0.25rem'],
       textTransform: 'uppercase',

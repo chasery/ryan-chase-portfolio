@@ -34,6 +34,10 @@ export default function Main(props) {
         fontSize: ['1rem', '1.125rem', '1.25rem'],
         fontWeight: '400',
         transition: theme.transitions.out,
+
+        '& + p': {
+          marginTop: ['1.75rem', '2rem', '2.25rem'],
+        },
       },
     })
   );
