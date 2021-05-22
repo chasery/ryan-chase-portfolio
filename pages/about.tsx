@@ -49,7 +49,7 @@ export default function About({ data }) {
     mq({
       flexGrow: '0',
       width: ['66%', '33.333%', '33.333%', '100%'],
-      margin: ['0 1rem', '0 2rem', '0'],
+      margin: ['0 1rem', '0 0 0 2rem', '0'],
       overflow: 'hidden',
       transition: theme.transitions.out,
 

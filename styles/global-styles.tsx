@@ -21,11 +21,14 @@ export function GlobalStyles() {
           align-items: center;
           min-width: 100vw;
           min-height: 100vh;
-          /* min-height: -webkit-fill-available; */
           background-color: ${theme.colors.athensGrey};
           color: ${theme.colors.thunder};
           font-family: 'Roboto';
           font-weight: 400;
+
+          @media (max-width: 48rem) {
+            min-height: fill-available;
+          }
         }
         body > div#__next {
           display: flex;
