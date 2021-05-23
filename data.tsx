@@ -2,17 +2,17 @@ export const socialMedia = [
   {
     icon: {
       path: '/icons/github.svg',
-      alt: '',
+      alt: 'GitHub',
       width: '32px',
       height: '32px',
     },
-    name: 'GitHub',
+    name: `View my GitHub profile`,
     path: 'https://github.com/chasery',
   },
   {
     icon: {
       path: '/icons/linked-in.svg',
-      alt: '',
+      alt: `View my LinkedIn profile`,
       width: '28px',
       height: '28px',
     },
@@ -22,7 +22,7 @@ export const socialMedia = [
   {
     icon: {
       path: '/icons/email.svg',
-      alt: '',
+      alt: 'Email me',
       width: '30px',
       height: '24px',
     },
@@ -33,12 +33,12 @@ export const socialMedia = [
 
 export const about = {
   title: `Hey, I'm Ryan!`,
-  text: `I love tackling problems from conceptualization to implementation. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise when ever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and life long learning.
-Currently, I am working full time as a Sr. UX Designer while moonlighting in Thinkful's Software Engineering program. My current path has me leading a team by driving an empathic approach to software development while cultivating the skills necessary to be able to construct my ideas. With a background in both design and development, I am able to foster a collaborative environment between the two camps. My life time of experience in creativity and problem solving allows me to bring a versatile set of tools to your team.
+  text: `I love tackling problems from conceptualization to implementation. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise whenever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and lifelong learning.
+Currently, I am working full time as a Sr. UX Designer while moonlighting in Thinkful's Software Engineering program. My current path has me leading a team by driving an empathic approach to software development while cultivating the skills necessary to be able to construct my ideas. With a background in both design and development, I am able to foster a collaborative environment between the two camps. My lifetime of experience in creativity and problem solving allows me to bring a versatile set of tools to your team.
 My specialties are HTML, CSS, JavaScript, ReactJS, Node.JS, PostgreSQL, Deployment, Version Control, Story Boarding, User Flows, Prototyping, and Usability Testing.`,
   image: {
     path: '/images/ryan-chase@2x.jpg',
-    alt: '',
+    alt: 'Ryan Chase is a Full Stack Developer located in Portland, Oregon',
   },
   details: [
     {
@@ -73,12 +73,12 @@ My specialties are HTML, CSS, JavaScript, ReactJS, Node.JS, PostgreSQL, Deployme
 export const skills = [
   {
     title: 'Development',
-    text: `Ryan is motivated to find the perfect solution for his end users. Staying in tune with the latest web development trends, he actively searches for ways to employ modern tools and frameworks in the apps he creates. Fresh out of Thinkful's code school, here is what he is proficient in.`,
+    text: `I am motivated to find the perfect solution for my end users. Staying in tune with the latest web development trends, I actively search for ways to employ modern tools and frameworks in the apps I create. Fresh out of Thinkful's code school, here is what I can do for you.`,
     skills: [
       {
         icon: {
           path: '/icons/javascript.svg',
-          alt: '',
+          alt: `I am excited to write JavaScript ES6`,
           width: '28px',
           height: '28px',
         },
@@ -87,7 +87,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/html-5.svg',
-          alt: '',
+          alt: 'I consider myself an expert with Hyper Text Markup Language 5 and can accomplish any layout you put in front of me',
           width: '25px',
           height: '28px',
         },
@@ -96,7 +96,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/css-3.svg',
-          alt: '',
+          alt: 'I am extremely confident with Cascading Style Sheets 3 and cross browser support',
           width: '25px',
           height: '28px',
         },
@@ -105,7 +105,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/react-js.svg',
-          alt: '',
+          alt: 'My passion lies in building apps and reusable components with React JS',
           width: '35px',
           height: '32px',
         },
@@ -114,7 +114,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/node-js.svg',
-          alt: '',
+          alt: 'I have gone to code school to learn how to build a Node.js server to support to the front-ends of my apps',
           width: '28px',
           height: '32px',
         },
@@ -123,7 +123,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/typescript.svg',
-          alt: '',
+          alt: 'It is my believe that we should be following best practices to write clean JavaScript with Typescript',
           width: '28px',
           height: '28px',
         },
@@ -132,7 +132,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/postgresql.svg',
-          alt: '',
+          alt: 'Understanding how to interface with databases is crucial for any app development. I have gone to code school to strengthen my knowledge around them',
           width: '30px',
           height: '32px',
         },
@@ -141,7 +141,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/git.svg',
-          alt: '',
+          alt: 'I have experience working with Git version control and the workflows',
           width: '32px',
           height: '32px',
         },
@@ -150,7 +150,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/testing.svg',
-          alt: '',
+          alt: 'Test driven development allows me to think about the problem from every possible way. I have experience with writing tests in Mocha, Chai, and Jest',
           width: '28px',
           height: '32px',
         },
@@ -160,12 +160,12 @@ export const skills = [
   },
   {
     title: 'UX Design',
-    text: `Ryan currently works as a Senior User Experience designer for a healthcare organization, where he leads usability for their mobile app. With a high awareness of usability as well as software development, Ryan brings a unique set of tools to any team.`,
+    text: `Currently working as a Senior User Experience designer for a healthcare organization, I lead usability for a mobile app providing member information to our healthcare workers. With a high awareness of usability as well as software development, I bring a unique set of tools to any team.`,
     skills: [
       {
         icon: {
           path: '/icons/storyboarding.svg',
-          alt: '',
+          alt: `I use storyboards to share the tale of a user's journey through a feature and application`,
           width: '22px',
           height: '28px',
         },
@@ -174,7 +174,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/journey-mapping.svg',
-          alt: '',
+          alt: `Creating journey maps allows you to envision the user's journey from start to finish`,
           width: '20px',
           height: '28px',
         },
@@ -183,7 +183,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/personas.svg',
-          alt: '',
+          alt: 'Personas help me build empathy for the demographic of users I anticipate to build apps for',
           width: '33px',
           height: '22px',
         },
@@ -192,7 +192,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/user-flows.svg',
-          alt: '',
+          alt: 'I create user flows to think through specific interactions in the software I design and develop',
           width: '32px',
           height: '26px',
         },
@@ -201,7 +201,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/wireframing.svg',
-          alt: '',
+          alt: 'Wireframes allow me to quickly share ideas of features and general layout to seek feedback early in the design process',
           width: '34px',
           height: '28px',
         },
@@ -210,7 +210,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/rapid-prototyping.svg',
-          alt: '',
+          alt: 'Rapid prototypes allow me to test apps and features without investing a huge amount of time to get feedback',
           width: '32px',
           height: '22px',
         },
@@ -219,7 +219,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/design-systems.svg',
-          alt: '',
+          alt: 'Design systems help reduce development times while also creating a consistent user experience; I have experience building them',
           width: '36px',
           height: '18px',
         },
@@ -228,7 +228,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/style-guides.svg',
-          alt: '',
+          alt: 'I use style guides to also promote consistency and branding',
           width: '30px',
           height: '30px',
         },
@@ -237,7 +237,7 @@ export const skills = [
       {
         icon: {
           path: '/icons/user-testing.svg',
-          alt: '',
+          alt: 'User testing is possibly the most important aspect of application development. I am comfortable leading user testing and getting feedback',
           width: '26px',
           height: '26px',
         },
@@ -257,13 +257,13 @@ export const work = [
     },
     image: {
       path: '/images/retrio.jpg',
-      alt: '',
+      alt: 'Retrio is a digital app I created to empower teams to continue Agile retrospectives in a world where we are all having to collaborate digitally',
     },
     skills: [
       {
         icon: {
           path: '/icons/react-js.svg',
-          alt: '',
+          alt: 'My passion lies in building apps and reusable components with React JS',
           width: '35px',
           height: '32px',
         },
@@ -272,7 +272,7 @@ export const work = [
       {
         icon: {
           path: '/icons/node-js.svg',
-          alt: '',
+          alt: 'I have gone to code school to learn how to build a Node.js server to support to the front-ends of my apps',
           width: '28px',
           height: '32px',
         },
@@ -281,7 +281,7 @@ export const work = [
       {
         icon: {
           path: '/icons/javascript.svg',
-          alt: '',
+          alt: 'I am excited to write JavaScript ES6',
           width: '28px',
           height: '28px',
         },
@@ -290,7 +290,7 @@ export const work = [
       {
         icon: {
           path: '/icons/postgresql.svg',
-          alt: '',
+          alt: 'Understanding how to interface with databases is crucial for any app development. I have gone to code school to strengthen my knowledge around them',
           width: '30px',
           height: '32px',
         },
@@ -299,7 +299,7 @@ export const work = [
       {
         icon: {
           path: '/icons/testing.svg',
-          alt: '',
+          alt: 'Test driven development allows me to think about the problem from every possible way. I have experience with writing tests in Mocha, Chai, and Jest',
           width: '28px',
           height: '32px',
         },
@@ -308,7 +308,7 @@ export const work = [
       {
         icon: {
           path: '/icons/git.svg',
-          alt: '',
+          alt: 'I have experience working with Git version control and the workflows',
           width: '32px',
           height: '32px',
         },
@@ -324,13 +324,13 @@ export const work = [
     },
     image: {
       path: '/images/ryan-chase-portfolio.jpg',
-      alt: '',
+      alt: 'Inspired to create new branding for myself after code school, I have set out on an adventure to update my professional resume and portfolio',
     },
     skills: [
       {
         icon: {
           path: '/icons/react-js.svg',
-          alt: '',
+          alt: 'My passion lies in building apps and reusable components with React JS',
           width: '35px',
           height: '32px',
         },
@@ -339,7 +339,7 @@ export const work = [
       {
         icon: {
           path: '/icons/javascript.svg',
-          alt: '',
+          alt: 'I am excited to write JavaScript ES6',
           width: '28px',
           height: '28px',
         },
@@ -348,7 +348,7 @@ export const work = [
       {
         icon: {
           path: '/icons/html-5.svg',
-          alt: '',
+          alt: 'I consider myself an expert with Hyper Text Markup Language 5 and can accomplish any layout you put in front of me',
           width: '25px',
           height: '28px',
         },
@@ -357,7 +357,7 @@ export const work = [
       {
         icon: {
           path: '/icons/css-3.svg',
-          alt: '',
+          alt: 'I am extremely confident with Cascading Style Sheets 3 and cross browser support',
           width: '25px',
           height: '28px',
         },
@@ -366,7 +366,7 @@ export const work = [
       {
         icon: {
           path: '/icons/emotion.svg',
-          alt: '',
+          alt: 'CSS-in-JS is such an awesome way for me to think in a modular mindset when creating components',
           width: '28px',
           height: '28px',
         },
@@ -375,7 +375,7 @@ export const work = [
       {
         icon: {
           path: '/icons/typescript.svg',
-          alt: '',
+          alt: 'It is my believe that we should be following best practices to write clean JavaScript with Typescript',
           width: '28px',
           height: '28px',
         },
@@ -392,13 +392,13 @@ export const work = [
     },
     image: {
       path: '/images/racking-up.jpg',
-      alt: '',
+      alt: 'Have you ever wanted to track an outfit you might want to buy? I built racking up to help you prioritize and track clothing purchases',
     },
     skills: [
       {
         icon: {
           path: '/icons/react-js.svg',
-          alt: '',
+          alt: 'My passion lies in building apps and reusable components with React JS',
           width: '35px',
           height: '32px',
         },
@@ -407,7 +407,7 @@ export const work = [
       {
         icon: {
           path: '/icons/node-js.svg',
-          alt: '',
+          alt: 'I have gone to code school to learn how to build a Node.js server to support to the front-ends of my apps',
           width: '28px',
           height: '32px',
         },
@@ -416,7 +416,7 @@ export const work = [
       {
         icon: {
           path: '/icons/javascript.svg',
-          alt: '',
+          alt: 'I am excited to write JavaScript ES6',
           width: '28px',
           height: '28px',
         },
@@ -425,7 +425,7 @@ export const work = [
       {
         icon: {
           path: '/icons/postgresql.svg',
-          alt: '',
+          alt: 'Understanding how to interface with databases is crucial for any app development. I have gone to code school to strengthen my knowledge around them',
           width: '30px',
           height: '32px',
         },
@@ -434,7 +434,7 @@ export const work = [
       {
         icon: {
           path: '/icons/testing.svg',
-          alt: '',
+          alt: 'Test driven development allows me to think about the problem from every possible way. I have experience with writing tests in Mocha, Chai, and Jest',
           width: '28px',
           height: '32px',
         },
@@ -443,7 +443,7 @@ export const work = [
       {
         icon: {
           path: '/icons/git.svg',
-          alt: '',
+          alt: 'I have experience working with Git version control and the workflows',
           width: '32px',
           height: '32px',
         },
