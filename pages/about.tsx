@@ -22,6 +22,7 @@ export default function About({ data }) {
       display: 'grid',
       gridTemplateColumns: ['100%', '100%', '100%', '66.666% 33.333%'],
       gridTemplateRows: ['auto, auto'],
+      marginBottom: ['1rem !important', 'inherit'],
       transition: theme.transitions.out,
 
       '& h3': {
@@ -41,7 +42,7 @@ export default function About({ data }) {
       display: 'flex',
       flexDirection: ['column', 'row', 'row', 'column'],
       alignItems: ['center', 'flex-start'],
-      marginTop: ['3.5rem', '3.75rem', '4rem', '0'],
+      marginTop: ['4rem', '5rem', '6rem', '0'],
       transition: theme.transitions.out,
     })
   );
@@ -62,7 +63,7 @@ export default function About({ data }) {
     mq({
       flexGrow: '1',
       width: ['100%', '66.666%', '66.666%', '100%'],
-      margin: ['3.5rem 0 0', '0 0 0 4rem', '0 0 0 4rem', '4rem 0 0 0'],
+      margin: ['3.5rem 0 0', '0 2rem 0 3.75rem', '0 0 0 4rem', '4rem 0 0 0'],
       padding: '0',
       listStyle: 'none',
       textTransform: 'uppercase',
@@ -71,8 +72,8 @@ export default function About({ data }) {
       '& > li': {
         display: 'flex',
         alignItems: 'center',
-        height: '3rem',
-        padding: ['0 1rem', '0 2rem', '0'],
+        height: '4rem',
+        padding: ['0 1rem', '0'],
         letterSpacing: ['0.25rem', '0.125rem', '0.125rem', '0.25rem'],
         fontSize: '1rem',
         transition: theme.transitions.out,

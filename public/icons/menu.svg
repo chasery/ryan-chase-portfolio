@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="22px" viewBox="0 0 32 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>menu</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-mobile-nav" transform="translate(-24.000000, -143.000000)" fill="#262324" fill-rule="nonzero">
+            <g id="Group" transform="translate(16.000000, 130.000000)">
+                <path d="M8,13 L8,16.1428571 L39.4285714,16.1428571 L39.4285714,13 L8,13 Z M8,22.4285714 L8,25.5714286 L39.4285714,25.5714286 L39.4285714,22.4285714 L8,22.4285714 Z M8,31.8571429 L8,35 L39.4285714,35 L39.4285714,31.8571429 L8,31.8571429 Z" id="menu"></path>
+            </g>
+        </g>
+    </g>
+</svg>

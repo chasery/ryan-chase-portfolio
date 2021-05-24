@@ -19,7 +19,7 @@ export default function SocialMedia(props) {
   );
   const SocialMediaItem = styled.li(() =>
     mq({
-      padding: ['0.5rem', '0'],
+      padding: '0',
       transition: theme.transitions.out,
 
       '& + li': {
@@ -28,15 +28,17 @@ export default function SocialMedia(props) {
       },
     })
   );
-  const SocialMediaLink = styled.a`
-    padding-left: 0;
-    color: ${theme.colors.thunder};
-    text-decoration: none;
+  const SocialMediaLink = styled.a(() =>
+    mq({
+      paddingLeft: '0',
+      color: theme.colors.thunder,
+      textDecoration: ['underline', 'none'],
 
-    &:hover {
-      text-decoration: underline;
-    }
-  `;
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    })
+  );
 
   const renderNavItems = (items) => {
     return items.map((item, i) => (

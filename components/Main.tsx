@@ -12,9 +12,12 @@ export default function Main(props) {
       transition: theme.transitions.out,
 
       '& section': {
-        marginTop: ['4rem', '5rem', '6rem'],
-        marginBottom: ['4rem', '5rem', '6rem'],
+        margin: ['4rem 0', '5rem 0', '6rem 0'],
         transition: theme.transitions.out,
+
+        '&:last-child': {
+          marginBottom: ['2rem', '2rem', '6rem'],
+        },
       },
 
       '& h3': {

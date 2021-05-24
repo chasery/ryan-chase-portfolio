@@ -17,8 +17,8 @@ export default function Icon(props) {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      width: [`${small ? '3rem' : '4.5rem'}`, `${small ? '3rem' : '6rem'}`],
-      height: [`${small ? '3rem' : '4.5rem'}`, `${small ? '3rem' : '6rem'}`],
+      width: ['4.5rem', `${small ? '3rem' : '6rem'}`],
+      height: ['4.5rem', `${small ? '3rem' : '6rem'}`],
 
       '& img': {
         transform: ['scale(0.875)', 'scale(1)'],

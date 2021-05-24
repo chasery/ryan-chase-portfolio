@@ -2,11 +2,11 @@ export const socialMedia = [
   {
     icon: {
       path: '/icons/github.svg',
-      alt: 'GitHub',
+      alt: `View my GitHub profile`,
       width: '32px',
       height: '32px',
     },
-    name: `View my GitHub profile`,
+    name: 'GitHub',
     path: 'https://github.com/chasery',
   },
   {
