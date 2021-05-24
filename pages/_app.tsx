@@ -9,11 +9,6 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <Head>
         <title>Ryan Chase / Portfolio</title>
-        <meta
-          name='description'
-          content='The portfolio website of Ryan Chase a Full Stack Web Developer'
-        />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
       <Component {...pageProps} />
     </ThemeProvider>

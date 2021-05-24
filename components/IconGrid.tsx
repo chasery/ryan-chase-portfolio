@@ -25,6 +25,7 @@ export default function IconGrid(props) {
         borderRight: ['none', `solid 0.125rem ${theme.colors.mischka}`],
 
         '&:nth-of-type(even)': {
+          // No border-right on evens until largest breakpoint
           borderRight:
             maxColumns === 3
               ? [
@@ -36,6 +37,7 @@ export default function IconGrid(props) {
               : 'none',
         },
         '&:nth-of-type(3n)': {
+          // Adds border to every third element in ipad and small desktop views
           borderRight:
             maxColumns === 3
               ? [
@@ -47,15 +49,18 @@ export default function IconGrid(props) {
               : null,
         },
         '&:nth-of-type(5)': {
+          // Here to create desired border on 5th element for two column layout
           borderBottom:
             maxColumns === 2
               ? [`solid 0.125rem ${theme.colors.mischka}`, 'none']
               : null,
         },
         '&:nth-of-type(6)': {
+          // Need to check if this can be refactored out
           borderRight: ['inherit', `inherit`, `inherit`, 'inherit'],
         },
         '&:nth-of-type(7), &:nth-of-type(8)': {
+          // Handles some of the responsive issues as we scale down
           borderBottom: [
             `solid 0.125rem ${theme.colors.mischka}`,
             `solid 0.125rem ${theme.colors.mischka}`,

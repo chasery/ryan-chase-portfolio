@@ -17,8 +17,8 @@ export default function Icon(props) {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      width: `${small ? '3rem' : '6rem'}`,
-      height: `${small ? '3rem' : '6rem'}`,
+      width: ['4.5rem', `${small ? '3rem' : '6rem'}`],
+      height: ['4.5rem', `${small ? '3rem' : '6rem'}`],
 
       '& img': {
         transform: ['scale(0.875)', 'scale(1)'],
@@ -29,7 +29,7 @@ export default function Icon(props) {
   const IconLabel = styled.span(() =>
     mq({
       marginLeft: '0.75rem',
-      fontSize: ['1rem'],
+      fontSize: '1rem',
       fontWeight: '500',
       letterSpacing: ['0.25rem', '0.125rem', '0.125rem', '0.25rem'],
       textTransform: 'uppercase',

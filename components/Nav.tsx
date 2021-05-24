@@ -12,6 +12,10 @@ export default function Nav() {
       name: 'Home',
     },
     {
+      path: '/about',
+      name: 'About',
+    },
+    {
       path: '/skills',
       name: 'Skills',
     },
@@ -25,34 +29,47 @@ export default function Nav() {
   const theme: any = useTheme();
   const Nav = styled.nav(() =>
     mq({
-      margin: [
-        '1.5rem 0 0 0.125rem',
-        '1.75rem 0 0 0.125rem',
-        '2rem 0 0 0.125rem',
-      ],
+      margin: ['1.5rem 0 0 0', '1.75rem 0 0 0', '2rem 0 0 0.125rem'],
       transition: theme.transitions.out,
     })
   );
-  const NavItemsList = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-  `;
-  const NavItem = styled.li`
-    & + li {
-      margin-left: 0.125rem;
-    }
-  `;
+  const NavItemsList = styled.ul(() =>
+    mq({
+      display: 'flex',
+      flexDirection: ['column', 'column', 'row'],
+      flexWrap: 'wrap',
+      margin: '0',
+      paddingLeft: '0',
+      listStyle: 'none',
+      transition: theme.transitions.out,
+    })
+  );
+  const NavItem = styled.li(() =>
+    mq({
+      '& + li': {
+        marginLeft: ['0', '0', '0.125rem'],
+        borderTop: [
+          `solid 0.125rem ${theme.colors.mischka}`,
+          `solid 0.125rem ${theme.colors.mischka}`,
+          'none',
+        ],
+        transition: theme.transitions.out,
+      },
+    })
+  );
   const NavItemLink = styled.a(() =>
     mq({
       display: 'block',
-      padding: ['0.5rem 0.75rem', '0.75rem 1.125rem', '1rem 1.5rem'],
+      padding: [
+        '1.375rem 1rem 1.375rem 1.125rem',
+        '1.375rem 2rem 1.375rem 2.125rem',
+        '1rem 1.5rem',
+      ],
       color: theme.colors.thunder,
-      fontSize: ['1rem', '1.125rem', '1.25rem'],
+      lineHeight: '1.25rem',
+      fontSize: '1.25rem',
       fontWeight: '500',
-      letterSpacing: ['0.125rem', '0.25rem'],
+      letterSpacing: '0.25rem',
       textDecoration: 'none',
       textTransform: 'uppercase',
       transition: theme.transitions.out,
