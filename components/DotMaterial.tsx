@@ -1,3 +1,4 @@
+import * as React from 'react';
 import * as THREE from 'three';
 import { extend } from '@react-three/fiber';
 
@@ -31,6 +32,17 @@ class DotMaterial extends THREE.ShaderMaterial {
         gl_FragColor = vec4(vec3(1.,1.,1.), step(length(gl_PointCoord.xy - vec2(0.5)), 0.5));
       }`,
     });
+  }
+}
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      dotMaterial: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
   }
 }
 
