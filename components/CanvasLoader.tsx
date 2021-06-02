@@ -22,7 +22,7 @@ export default function CanvasLoader() {
   return (
     <CanvasLoader>
       <Canvas camera={{ position: [0, 0, 1] }}>
-        <CanvasScene theme={theme} />
+        <CanvasScene {...theme} />
       </Canvas>
     </CanvasLoader>
   );
