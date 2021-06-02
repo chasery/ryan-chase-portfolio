@@ -33,7 +33,7 @@ export default function Home({ data }) {
       return [coords, sizes, color];
     }, [pointCount]);
 
-    const geom = useRef();
+    const geom = useRef(null);
     useFrame((state) => {
       geom.current.material.uniforms.time.value = state.clock.getElapsedTime();
       geom.current.geometry.verticesNeedUpdate = true;
