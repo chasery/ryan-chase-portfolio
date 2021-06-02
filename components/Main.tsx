@@ -9,6 +9,7 @@ export default function Main(props) {
   const theme: any = useTheme();
   const Main = styled.main(() =>
     mq({
+      width: ['100%', '44rem', '58rem', '71rem'],
       transition: theme.transitions.out,
 
       '& section': {
