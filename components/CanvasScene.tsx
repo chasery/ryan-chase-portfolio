@@ -8,13 +8,11 @@ export default function Home({ data }) {
   const ROW = 100;
   const COL = 100;
   const NUM = ROW * COL;
-  const black = new THREE.Color('#101010');
 
   function Particles({ pointCount }) {
-    const [coords, sizes, color] = useMemo(() => {
+    const [coords, sizes] = useMemo(() => {
       const initialCoords = [];
       const initialSizes = [];
-      const initialColor = [];
       let i = 0;
       for (let y = 0; y < ROW; y += 1) {
         for (let x = 0; x < COL; x += 1) {
@@ -25,12 +23,10 @@ export default function Home({ data }) {
           i++;
         }
       }
-      initialColor.push(black);
 
       const coords = new Float32Array(initialCoords);
       const sizes = new Float32Array(initialSizes);
-      const color = new Float32Array(initialColor);
-      return [coords, sizes, color];
+      return [coords, sizes];
     }, [pointCount]);
 
     const geom = useRef(null);
@@ -56,12 +52,6 @@ export default function Home({ data }) {
             attachObject={['attributes', 'size']}
             count={sizes.length}
             array={sizes}
-            itemSize={1}
-          />
-          <bufferAttribute
-            attachObject={['attributes', 'color']}
-            count={color.length}
-            array={color}
             itemSize={1}
           />
         </bufferGeometry>
