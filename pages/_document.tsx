@@ -12,12 +12,12 @@ export default class MyDocument extends Document {
           <meta httpEquiv='content-type' content='text/html; charset=utf-8' />
           <meta
             name='description'
-            content='The portfolio website of Ryan Chase a Full Stack Web Developer'
+            content='The portfolio website of Ryan Chase a Full Stack Engineer'
           />
           <meta property='og:title' content='Ryan Chase / Portfolio' />
           <meta
             property='og:description'
-            content='The portfolio website of Ryan Chase a Full Stack Web Developer'
+            content='The portfolio website of Ryan Chase a Full Stack Engineer'
           />
           <meta property='og:url' content='http://chasery.com' />
           <meta property='og:site_name' content='Ryan Chase' />

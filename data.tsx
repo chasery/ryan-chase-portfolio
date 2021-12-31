@@ -38,7 +38,7 @@ Currently, I am working full time as a Sr. UX Designer while moonlighting in Thi
 My specialties are HTML, CSS, JavaScript, ReactJS, Node.JS, PostgreSQL, Deployment, Version Control, Story Boarding, User Flows, Prototyping, and Usability Testing.`,
   image: {
     path: '/images/ryan-chase@2x.jpg',
-    alt: 'Ryan Chase is a Full Stack Developer located in Portland, Oregon',
+    alt: 'Ryan Chase is a Full Stack Engineer located in Portland, Oregon',
   },
   details: [
     {

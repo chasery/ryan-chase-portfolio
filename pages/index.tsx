@@ -20,7 +20,7 @@ export default function Home({ data }) {
   return (
     <>
       <CanvasLoader />
-      <Header subHeading={`Full Stack Developer`} />
+      <Header subHeading={`Full Stack Engineer`} />
       <Footer data={data} />
     </>
   );
