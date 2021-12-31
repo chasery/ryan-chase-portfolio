@@ -33,9 +33,9 @@ export const socialMedia = [
 
 export const about = {
   title: `Hey, I'm Ryan!`,
-  text: `I love tackling problems from conceptualization to implementation. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise whenever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and lifelong learning.
-Currently, I am working full time as a Sr. UX Designer while moonlighting in Thinkful's Software Engineering program. My current path has me leading a team by driving an empathic approach to software development while cultivating the skills necessary to be able to construct my ideas. With a background in both design and development, I am able to foster a collaborative environment between the two camps. My lifetime of experience in creativity and problem solving allows me to bring a versatile set of tools to your team.
-My specialties are HTML, CSS, JavaScript, ReactJS, Node.JS, PostgreSQL, Deployment, Version Control, Story Boarding, User Flows, Prototyping, and Usability Testing.`,
+  text: `Hey! I'm Ryan and I love tackling problems from conceptualization, to implementation, and finally to maintenance. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise when ever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and life long learning.
+  My career path has led me to Nike where I'm practicing Test Driven Development with a focus on Continuous Integration/Continuous Delivery within the Nike By You shoe customization experience. Working as a Full Stack Engineer provides daily challenges which push me to learn new techniques and skills, which I am appreciative of. It's this constant growth where I might learn some new ECMAScript syntax or optimize a function I wrote in the past, that inspires me to become a better engineer.
+  My specialties are JavaScript, TypeScript, CSS3, HTML5, Git, Unit and Integration testing, A/B Testing, State Management, Continuous Integration/Continuous Deployment, Node.js, PostgreSQL, Express.`,
   image: {
     path: '/images/ryan-chase@2x.jpg',
     alt: 'Ryan Chase is a Full Stack Engineer located in Portland, Oregon',
