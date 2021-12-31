@@ -33,7 +33,7 @@ export const socialMedia = [
 
 export const about = {
   title: `Hey, I'm Ryan!`,
-  text: `Hey! I'm Ryan and I love tackling problems from conceptualization, to implementation, and finally to maintenance. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise when ever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and life long learning.
+  text: `I love tackling problems from conceptualization, to implementation, and finally to maintenance. My desire to build started at a young age with countless hours of piecing together anything from Lego cities to model cars. Every aspect challenged me to plan, analyze, and overcome the obstacles that arise when ever you are creating. Since my young city planning days, I have grown into a career of problem solving with a splash of creativity and life long learning.
   My career path has led me to Nike where I'm practicing Test Driven Development with a focus on Continuous Integration/Continuous Delivery within the Nike By You shoe customization experience. Working as a Full Stack Engineer provides daily challenges which push me to learn new techniques and skills, which I am appreciative of. It's this constant growth where I might learn some new ECMAScript syntax or optimize a function I wrote in the past, that inspires me to become a better engineer.
   My specialties are JavaScript, TypeScript, CSS3, HTML5, Git, Unit and Integration testing, A/B Testing, State Management, Continuous Integration/Continuous Deployment, Node.js, PostgreSQL, Express.`,
   image: {
