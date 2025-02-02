@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import './DotMaterial';
+import { DotMaterial } from './DotMaterial';
 
 export default function Home() {
   const ROW = 100;
@@ -54,7 +54,8 @@ export default function Home() {
             itemSize={1}
           />
         </bufferGeometry>
-        <dotMaterial />
+        // @ts-ignore
+        <DotMaterial />
       </points>
     );
   }
