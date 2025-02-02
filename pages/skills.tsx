@@ -24,6 +24,7 @@ export default function Skills(): React.ReactElement {
 
   return (
     <>
+      <title>Ryan Chase / Portfolio - Skills</title>
       <Header title={title} subtitle={subtitle} />
       <Main>{Boolean(sections.length) && renderContent(sections)}</Main>
     </>
