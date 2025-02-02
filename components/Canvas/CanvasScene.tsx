@@ -1,10 +1,9 @@
 import React, { useMemo, useRef } from 'react';
-import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import './DotMaterial';
+import { DotMaterial } from './DotMaterial';
 
-export default function Home({ data }) {
+export default function Home() {
   const ROW = 100;
   const COL = 100;
   const NUM = ROW * COL;
@@ -43,19 +42,20 @@ export default function Home({ data }) {
       >
         <bufferGeometry attach='geometry'>
           <bufferAttribute
-            attachObject={['attributes', 'position']}
+            attach='attributes-position'
             count={coords.length / 3}
             array={coords}
             itemSize={3}
           />
           <bufferAttribute
-            attachObject={['attributes', 'size']}
+            attach='attributes-size'
             count={sizes.length}
             array={sizes}
             itemSize={1}
           />
         </bufferGeometry>
-        <dotMaterial />
+        // @ts-ignore
+        <DotMaterial />
       </points>
     );
   }

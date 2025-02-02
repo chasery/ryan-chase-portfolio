@@ -1,16 +1,28 @@
 import { useState } from 'react';
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../utils/responsive';
 import Nav from './Nav';
-import Icon from './Icon';
+import Icon from './IconGrid/Icon';
+import {
+  NAV_CLOSE_DESCRIPTION,
+  NAV_CLOSE_TITLE,
+  NAV_OPEN_DESCRIPTION,
+  NAV_OPEN_TITLE,
+} from '../utils/constants';
 
-export default function Header(props) {
-  const { subHeading } = props;
+export interface HeaderProps {
+  title: string;
+  subtitle: string;
+}
+
+export default function Header({
+  title,
+  subtitle,
+}: HeaderProps): React.ReactElement<HeaderProps> {
   const [menuOpen, setMenuOpen] = useState(false);
+  const theme: Theme = useTheme();
 
-  // Component styling
-  const theme: any = useTheme();
   const Header = styled.header(() =>
     mq({
       position: 'relative',
@@ -91,34 +103,34 @@ export default function Header(props) {
 
   return (
     <Header>
-      <Heading>Ryan Chase</Heading>
-      <SubHeading>{subHeading}</SubHeading>
+      <Heading>{title}</Heading>
+      <SubHeading>{subtitle}</SubHeading>
       <NavWrapper>
         <Nav />
       </NavWrapper>
       <MenuControl onClick={handleOpenMenu}>
         <Icon
-          name='Menu'
+          label={NAV_OPEN_TITLE}
           path='/icons/menu.svg'
-          alt='Open Menu'
-          width='31px'
-          height='22px'
+          width={31}
+          height={22}
+          alt={NAV_OPEN_DESCRIPTION}
           small={true}
         />
       </MenuControl>
       {menuOpen && (
         <MobileNavWrapper>
-          <Heading>Ryan Chase</Heading>
-          <SubHeading>Menu</SubHeading>
+          <Heading>{title}</Heading>
+          <SubHeading>{subtitle}</SubHeading>
           <Nav />
           <CloseControlWrapper>
             <MenuControl onClick={handleCloseMenu}>
               <Icon
-                name='Close'
+                label={NAV_CLOSE_TITLE}
                 path='/icons/close.svg'
-                alt='Close Menu'
-                width='24px'
-                height='24px'
+                width={24}
+                height={24}
+                alt={NAV_CLOSE_DESCRIPTION}
                 small={true}
               />
             </MenuControl>

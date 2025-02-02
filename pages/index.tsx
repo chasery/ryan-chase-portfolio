@@ -1,27 +1,24 @@
 import dynamic from 'next/dynamic';
-import { socialMedia } from 'data';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { pages } from 'utils/constants';
 
-const CanvasLoader = dynamic(() => import('../components/CanvasLoader'), {
-  // loading: () => <p>...</p>,
-  ssr: false,
-});
+const CanvasLoader = dynamic(
+  () => import('../components/Canvas/CanvasLoader'),
+  {
+    // loading: () => <p>...</p>,
+    ssr: false,
+  }
+);
 
-export const getStaticProps = async () => {
-  return {
-    props: {
-      data: socialMedia,
-    },
-  };
-};
+export default function Home(): React.ReactElement {
+  const { title, subtitle } = pages.home;
 
-export default function Home({ data }) {
   return (
     <>
       <CanvasLoader />
-      <Header subHeading={`Full Stack Engineer`} />
-      <Footer data={data} />
+      <Header title={title} subtitle={subtitle} />
+      <Footer />
     </>
   );
 }

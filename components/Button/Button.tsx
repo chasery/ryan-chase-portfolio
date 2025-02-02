@@ -1,12 +1,18 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../../utils/responsive';
 
-export default function Button(props) {
-  const { text, url } = props;
+export interface ButtonProps {
+  text: string;
+  path: string;
+}
 
-  // Component styling
-  const theme: any = useTheme();
+export default function Button({
+  text,
+  path,
+}: ButtonProps): React.ReactElement<ButtonProps> {
+  const theme: Theme = useTheme();
+
   const Button = styled.a(() =>
     mq({
       display: 'flex',
@@ -35,7 +41,7 @@ export default function Button(props) {
   );
 
   return (
-    <Button href={url} target='_blank'>
+    <Button href={path} target='_blank'>
       {text}
     </Button>
   );

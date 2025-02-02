@@ -1,14 +1,28 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../../utils/responsive';
 import Image from 'next/image';
 
-export default function Icon(props) {
-  const { name, path, alt, width, height, small } = props;
+export interface IconProps {
+  label?: string;
+  path: string;
+  width: number;
+  height: number;
+  alt: string;
+  small?: boolean;
+}
 
-  // Component styling
-  const theme: any = useTheme();
-  const Icon = styled.div`
+export default function Icon({
+  label,
+  path,
+  alt,
+  width,
+  height,
+  small,
+}: IconProps): React.ReactElement<IconProps> {
+  const theme: Theme = useTheme();
+
+  const IconContainer = styled.div`
     display: flex;
     align-items: center;
   `;
@@ -38,11 +52,11 @@ export default function Icon(props) {
   );
 
   return (
-    <Icon>
+    <IconContainer>
       <IconImage>
         <Image src={path} alt={alt} width={width} height={height} />
       </IconImage>
-      <IconLabel>{name}</IconLabel>
-    </Icon>
+      <IconLabel>{label}</IconLabel>
+    </IconContainer>
   );
 }

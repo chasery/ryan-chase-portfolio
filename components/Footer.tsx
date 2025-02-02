@@ -1,12 +1,11 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../utils/responsive';
 import SocialMedia from './SocialMedia';
 
-export default function Footer(props) {
-  const { data } = props;
-  // Component styling
-  const theme: any = useTheme();
+export default function Footer(): React.ReactElement {
+  const theme: Theme = useTheme();
+
   const Footer = styled.footer(() =>
     mq({
       display: 'flex',
@@ -21,7 +20,7 @@ export default function Footer(props) {
 
   return (
     <Footer>
-      <SocialMedia links={data} />
+      <SocialMedia />
     </Footer>
   );
 }
