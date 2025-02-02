@@ -115,6 +115,7 @@ export default function About(): React.ReactElement {
 
   return (
     <>
+      <title>Ryan Chase / Portfolio - About</title>
       <Header title={title} subtitle={subtitle} />
       <Main>
         <Section>
