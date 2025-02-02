@@ -1,13 +1,10 @@
 import React from 'react';
-import { Theme, useTheme } from '@emotion/react';
 import { Canvas } from '@react-three/fiber';
 import styled from '@emotion/styled';
 import CanvasScene from './CanvasScene';
 import { Vector3 } from 'three';
 
 export default function CanvasLoader(): React.ReactElement {
-  const theme: Theme = useTheme();
-
   const CanvasLoader = styled.div`
     position: absolute;
     left: 0;
