@@ -1,12 +1,21 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../../utils/responsive';
+import { ReactNode } from 'react';
 
-export default function ButtonGroup(props) {
-  const { single, alignment, children } = props;
+export interface ButtonGroupProps {
+  single: boolean;
+  alignment?: string;
+  children: ReactNode;
+}
 
-  // Component styling
-  const theme: any = useTheme();
+export default function ButtonGroup({
+  single,
+  alignment,
+  children,
+}: ButtonGroupProps): React.ReactElement<ButtonGroupProps> {
+  const theme: Theme = useTheme();
+
   const ButtonGroup = styled.div(() =>
     mq({
       display: 'grid',
@@ -17,7 +26,7 @@ export default function ButtonGroup(props) {
         `${single && !alignment ? '1fr' : '1fr 1fr'}`,
       ],
       gridGap: `${single && !alignment ? '0' : '2rem'}`,
-      justifyItems: ['center', 'center', 'center', `${alignment}`],
+      justifyItems: ['center', 'center', 'center', alignment],
       marginTop: ['3.5rem', '3.75rem', '4rem'],
       padding: ['0 1rem', '0 2rem', '0'],
       transition: theme.transitions.out,

@@ -1,11 +1,12 @@
 import React from 'react';
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import { Canvas } from '@react-three/fiber';
 import styled from '@emotion/styled';
 import CanvasScene from './CanvasScene';
+import { Vector3 } from 'three';
 
-export default function CanvasLoader() {
-  const theme: any = useTheme();
+export default function CanvasLoader(): React.ReactElement {
+  const theme: Theme = useTheme();
 
   const CanvasLoader = styled.div`
     position: absolute;
@@ -21,8 +22,8 @@ export default function CanvasLoader() {
 
   return (
     <CanvasLoader>
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <CanvasScene {...theme} />
+      <Canvas camera={{ position: new Vector3(0, 0, 1) }}>
+        <CanvasScene />
       </Canvas>
     </CanvasLoader>
   );

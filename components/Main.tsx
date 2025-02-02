@@ -1,12 +1,17 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../utils/responsive';
+import { ReactNode } from 'react';
 
-export default function Main(props) {
-  const { children } = props;
+export interface MainProps {
+  children: ReactNode;
+}
 
-  // Component styling
-  const theme: any = useTheme();
+export default function Main({
+  children,
+}: MainProps): React.ReactElement<MainProps> {
+  const theme: Theme = useTheme();
+
   const Main = styled.main(() =>
     mq({
       width: ['100%', '44rem', '58rem', '71rem'],

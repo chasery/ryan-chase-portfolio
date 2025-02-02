@@ -1,22 +1,18 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import { about } from '../data';
 import Image from 'next/image';
-import mq from '../services/responsive';
+import mq from '../utils/responsive';
 import Header from '../components/Header';
 import Main from '../components/Main';
+import React from 'react';
+import { pages } from '../utils/constants';
+import { PageSection, PageSectionDetail } from '../utils/types';
 
-export const getStaticProps = async () => {
-  return {
-    props: {
-      data: about,
-    },
-  };
-};
+export default function About(): React.ReactElement {
+  const theme: Theme = useTheme();
+  const { title, subtitle, sections } = pages.about;
+  const { image, details } = sections[0];
 
-export default function About({ data }) {
-  // Page styles
-  const theme: any = useTheme();
   const Section = styled.section(() =>
     mq({
       display: 'grid',
@@ -94,22 +90,24 @@ export default function About({ data }) {
     })
   );
 
-  const renderAboutText = (data) => {
+  const renderAboutText = (section: PageSection): React.ReactElement[] => {
     const content = [];
-    if (data.title) content.push(<h3 key={1}>{data.title}</h3>);
-    if (data.text)
+    if (section.title) content.push(<h3 key={1}>{section.title}</h3>);
+    if (section.description)
       // Split text string on returns and wrap in JSX
-      content.push(data.text.split('\n').map((p, i) => <p key={i}>{p}</p>));
+      content.push(
+        section.description.split('\n').map((p, i) => <p key={i}>{p}</p>)
+      );
 
     return content;
   };
 
-  const renderAboutDetails = (details) => {
+  const renderAboutDetails = (details: PageSectionDetail[]) => {
     return details.map((detail, i) => {
       return (
-        <li key={i} className={!detail.label ? 'no-border' : null}>
-          {detail.label ? <label htmlFor={i}>{detail.label}</label> : null}
-          <strong id={detail.label ? i : null}>{detail.value}</strong>
+        <li key={i} className={!detail.label && 'no-border'}>
+          {detail.label && <label htmlFor={`${i}`}>{detail.label}</label>}
+          <strong id={`${i}`}>{detail.value}</strong>
         </li>
       );
     });
@@ -117,22 +115,24 @@ export default function About({ data }) {
 
   return (
     <>
-      <Header subHeading='Learn A Little About Me' />
+      <Header title={title} subtitle={subtitle} />
       <Main>
         <Section>
-          <AboutText>{data && renderAboutText(data)}</AboutText>
+          <AboutText>
+            {Boolean(sections.length) && renderAboutText(sections[0])}
+          </AboutText>
           <AboutAside>
             <AboutImage>
               <Image
-                src={data.image.path}
-                alt={data.image.alt}
+                src={image.path}
+                width={0}
+                height={0}
+                alt={image.alt}
                 layout='responsive'
-                width='100%'
-                height='100%'
               />
             </AboutImage>
-            {data.details && (
-              <AboutDetails>{renderAboutDetails(data.details)}</AboutDetails>
+            {Boolean(details.length) && (
+              <AboutDetails>{renderAboutDetails(details)}</AboutDetails>
             )}
           </AboutAside>
         </Section>

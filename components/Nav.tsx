@@ -1,32 +1,16 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../utils/responsive';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Page } from '../utils/types';
+import { pages } from '../utils/constants';
 
-export default function Nav() {
+export default function Nav(): React.ReactElement {
   const router = useRouter();
-  const pages = [
-    {
-      path: '/',
-      name: 'Home',
-    },
-    {
-      path: '/about',
-      name: 'About',
-    },
-    {
-      path: '/skills',
-      name: 'Skills',
-    },
-    {
-      path: '/work',
-      name: 'Work',
-    },
-  ];
+  const theme: Theme = useTheme();
+  const navPages: Page[] = [pages.home, pages.about, pages.skills];
 
-  // Component styling
-  const theme: any = useTheme();
   const Nav = styled.nav(() =>
     mq({
       margin: ['1.5rem 0 0 0', '1.75rem 0 0 0', '2rem 0 0 0.125rem'],
@@ -82,15 +66,13 @@ export default function Nav() {
     })
   );
 
-  const renderNavItems = (items) => {
-    return items.map((item, i) => {
+  const renderNavItems = (navPages: Page[]) => {
+    return navPages.map(({ path, title }: Page, i) => {
       return (
         <NavItem key={i}>
-          <Link href={item.path} passHref>
-            <NavItemLink
-              className={router.pathname === item.path ? 'active' : null}
-            >
-              / {item.name}
+          <Link href={path} passHref legacyBehavior>
+            <NavItemLink className={router.pathname === path ? 'active' : null}>
+              / {title}
             </NavItemLink>
           </Link>
         </NavItem>
@@ -100,7 +82,9 @@ export default function Nav() {
 
   return (
     <Nav>
-      <NavItemsList>{pages && renderNavItems(pages)}</NavItemsList>
+      <NavItemsList>
+        {Boolean(navPages.length) && renderNavItems(navPages)}
+      </NavItemsList>
     </Nav>
   );
 }

@@ -1,12 +1,19 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
+import mq from '../../utils/responsive';
+import Icon, { IconProps } from './Icon';
 
-export default function IconGrid(props) {
-  const { children, maxColumns } = props;
+export interface IconGridProps {
+  icons: IconProps[];
+  maxColumns: number;
+}
 
-  // Component styling
-  const theme: any = useTheme();
+export default function IconGrid({
+  icons = [],
+  maxColumns,
+}: IconGridProps): React.ReactElement<IconGridProps> {
+  const theme: Theme = useTheme();
+
   const IconGrid = styled.ul(() =>
     mq({
       display: 'grid',
@@ -76,5 +83,22 @@ export default function IconGrid(props) {
     })
   );
 
-  return <IconGrid>{children}</IconGrid>;
+  return (
+    <IconGrid>
+      {Boolean(icons.length) &&
+        icons.map(
+          (skill: IconProps, j): React.ReactElement => (
+            <li key={j}>
+              <Icon
+                label={skill.label}
+                path={skill.path}
+                width={skill.width}
+                height={skill.height}
+                alt={skill.alt}
+              />
+            </li>
+          )
+        )}
+    </IconGrid>
+  );
 }

@@ -1,12 +1,13 @@
-import { useTheme } from '@emotion/react';
+import { Theme, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import mq from '../services/responsive';
-import Icon from './Icon';
+import mq from '../utils/responsive';
+import Icon from './IconGrid/Icon';
+import { SocialDetail } from '../utils/types';
+import { socialMedia } from '../utils/constants';
 
-export default function SocialMedia(props) {
-  const { links } = props;
-  // Component styling
-  const theme: any = useTheme();
+export default function SocialMedia(): React.ReactElement {
+  const theme: Theme = useTheme();
+
   const SocialMedia = styled.ul(() =>
     mq({
       display: 'flex',
@@ -40,22 +41,19 @@ export default function SocialMedia(props) {
     })
   );
 
-  const renderNavItems = (items) => {
-    return items.map((item, i) => (
+  const renderNavItems = (socialDetails: SocialDetail[]) => {
+    return socialDetails.map(({ path, icon }: SocialDetail, i) => (
       <SocialMediaItem key={i}>
-        <SocialMediaLink href={item.path} target='_blank'>
-          <Icon
-            name={item.name}
-            path={item.icon.path}
-            alt={item.icon.alt}
-            width={item.icon.width}
-            height={item.icon.height}
-            small={true}
-          />
+        <SocialMediaLink href={path} target='_blank'>
+          <Icon {...icon} />
         </SocialMediaLink>
       </SocialMediaItem>
     ));
   };
 
-  return <SocialMedia>{links && renderNavItems(links)}</SocialMedia>;
+  return (
+    <SocialMedia>
+      {Boolean(socialMedia.length) && renderNavItems(socialMedia)}
+    </SocialMedia>
+  );
 }
