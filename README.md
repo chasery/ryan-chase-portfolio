@@ -151,9 +151,44 @@ This project is committed to accessibility and follows WCAG 2.1 Level AA standar
 
 See [CODE_STANDARDS.md](./CODE_STANDARDS.md#accessibility-standards) for detailed accessibility guidelines.
 
+## 🚀 Deployment
+
+This project is configured to deploy to [Vercel](https://vercel.com).
+
+### Vercel Configuration
+
+The project includes a `vercel.json` file that configures:
+- Build command: `yarn build`
+- Output directory: `dist`
+- Framework: Astro
+
+### Automatic Deployment
+
+When you push to your main branch, Vercel will:
+1. Install dependencies with `yarn install`
+2. Build the site with `yarn build`
+3. Deploy the `dist` directory
+
+### Manual Deployment
+
+You can also deploy manually:
+```bash
+yarn build
+vercel --prod
+```
+
+Or use the Vercel CLI:
+```bash
+npm i -g vercel
+vercel
+```
+
+For more information, see the [Astro Deployment Guide](https://docs.astro.build/en/guides/deploy/vercel/).
+
 ## 📖 Learn More
 
 - [Astro Documentation](https://docs.astro.build)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
 - [React Documentation](https://react.dev)
+- [Vercel Documentation](https://vercel.com/docs)
