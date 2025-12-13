@@ -98,6 +98,8 @@ A modern portfolio website built with Astro, React, TypeScript, and Tailwind CSS
 | `yarn format`          | Format code with Prettier                        |
 | `yarn format:check`    | Check code formatting                            |
 | `yarn commit`          | Interactive commit with Commitizen              |
+| `yarn deploy`          | Deploy to Vercel (preview)                      |
+| `yarn deploy:prod`     | Deploy to Vercel (production)                   |
 | `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
 
 ## 📚 Documentation
@@ -171,17 +173,24 @@ When you push to your main branch, Vercel will:
 
 ### Manual Deployment
 
-You can also deploy manually:
+You can deploy manually using the included scripts:
+
+**Preview Deployment** (for testing):
 ```bash
-yarn build
-vercel --prod
+yarn deploy
 ```
 
-Or use the Vercel CLI:
+**Production Deployment**:
 ```bash
-npm i -g vercel
-vercel
+yarn deploy:prod
 ```
+
+The first time you run these commands, Vercel CLI will prompt you to:
+1. Log in to your Vercel account
+2. Link the project to your Vercel project
+3. Configure deployment settings
+
+After the initial setup, deployments will be automatic.
 
 For more information, see the [Astro Deployment Guide](https://docs.astro.build/en/guides/deploy/vercel/).
 
