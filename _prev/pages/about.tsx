@@ -129,7 +129,7 @@ export default function About(): React.ReactElement {
                 width={0}
                 height={0}
                 alt={image.alt}
-                layout='responsive'
+                layout="responsive"
               />
             </AboutImage>
             {Boolean(details.length) && (

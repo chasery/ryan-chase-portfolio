@@ -1,0 +1,271 @@
+# Cursor Rules for Ryan Chase Portfolio
+
+## Project Overview
+This is an Astro-based portfolio website using TypeScript, React, and Tailwind CSS 4. The project follows modern web development best practices with strict type checking and automated code quality tools.
+
+## Tech Stack
+- **Framework**: Astro 5.16+
+- **UI Library**: React 19.2+
+- **Styling**: Tailwind CSS 4 (via @tailwindcss/vite)
+- **Language**: TypeScript (strict mode)
+- **Package Manager**: Yarn
+- **Code Quality**: ESLint, Prettier, Husky, Commitlint, Commitizen
+
+## File Structure
+```
+src/
+  layouts/        # Reusable layout components (BaseLayout.astro, etc.)
+  pages/          # Route pages (file-based routing)
+  components/     # Reusable components (Astro, React, etc.)
+  styles/         # Global styles (global.css with Tailwind imports)
+  utils/          # Utility functions and helpers (if needed)
+public/           # Static assets (images, icons, PDFs, etc.)
+```
+
+## Code Standards
+
+### Astro Components
+- Use `.astro` extension for Astro components
+- Frontmatter section (---) must be at the top
+- Import statements go in the frontmatter section
+- Use TypeScript interfaces for component props
+- Prefer functional component patterns
+- Use PascalCase for component names
+- One component per file
+
+Example:
+```astro
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Default' } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="container mx-auto">
+    <slot />
+  </main>
+</BaseLayout>
+```
+
+### React Components
+- Use `.tsx` extension for React components
+- Use functional components with TypeScript
+- Define props interfaces explicitly
+- Use React 19+ patterns (no need for react/react-in-jsx-scope)
+- Prefer named exports for components
+- Use `client:load` or `client:visible` directives when needed in Astro
+
+Example:
+```tsx
+interface ButtonProps {
+  text: string;
+  onClick?: () => void;
+  variant?: 'primary' | 'secondary';
+}
+
+export default function Button({ text, onClick, variant = 'primary' }: ButtonProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={`px-4 py-2 rounded ${variant === 'primary' ? 'bg-blue-500' : 'bg-gray-500'}`}
+    >
+      {text}
+    </button>
+  );
+}
+```
+
+### Styling
+- **Use Tailwind CSS utility classes** - This project is migrating from Emotion to Tailwind
+- Avoid inline styles unless absolutely necessary
+- Use `class` attribute (not `className` in Astro templates)
+- Use `className` in React components
+- Global styles go in `src/styles/global.css`
+- Use Tailwind's responsive prefixes (sm:, md:, lg:, xl:)
+- Prefer Tailwind's design tokens over custom values
+
+### TypeScript
+- Use strict TypeScript mode (already configured)
+- Define explicit types for all function parameters and return values
+- Use interfaces for object shapes
+- Use type aliases for unions and complex types
+- Avoid `any` - use `unknown` if type is truly unknown
+- Use optional chaining and nullish coalescing where appropriate
+
+### Imports
+- Use ES module syntax (`import`/`export`)
+- Group imports: external packages, then internal modules
+- Use relative paths for internal imports
+- Use absolute imports from `src/` if configured (check tsconfig)
+
+### File Naming
+- Components: PascalCase (e.g., `BaseLayout.astro`, `Button.tsx`)
+- Utilities: camelCase (e.g., `formatDate.ts`, `constants.ts`)
+- Pages: lowercase with hyphens for routes (e.g., `about.astro` → `/about`)
+- Styles: kebab-case (e.g., `global.css`)
+
+### Code Organization
+- Keep components small and focused (single responsibility)
+- Extract reusable logic into utility functions
+- Use layouts for shared page structure
+- Group related components in folders
+- Place component-specific styles in component files when needed
+
+### Git & Commits
+- Use `yarn commit` for interactive commits (Commitizen)
+- Follow conventional commit format: `type(scope): subject`
+- Types: feat, fix, docs, style, refactor, test, chore
+- Run `yarn lint` and `yarn format` before committing
+- Pre-commit hooks will run lint-staged automatically
+
+## Best Practices
+
+### Performance
+- Use Astro's zero-JS-by-default approach
+- Only add `client:*` directives when interactivity is needed
+- Use `client:visible` for lazy hydration when possible
+- Optimize images using Astro's Image component
+- Minimize bundle size - prefer Astro components over React when possible
+
+### Accessibility (a11y) - CRITICAL
+Accessibility is a core requirement. All code must meet WCAG 2.1 Level AA standards.
+
+**Semantic HTML:**
+- Use proper HTML elements (`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`)
+- Use `<button>` for actions, `<a>` for navigation
+- Use proper form elements with associated `<label>` elements
+- Maintain proper heading hierarchy (h1 → h2 → h3, no skipping levels)
+
+**ARIA Attributes:**
+- Use ARIA when semantic HTML isn't sufficient
+- Use `aria-label` for icon-only buttons: `<button aria-label="Close menu">`
+- Use `aria-hidden="true"` for decorative icons
+- Use `aria-expanded` for collapsible content
+- Use `aria-live` for dynamic content updates
+- Use `aria-describedby` to associate error messages with inputs
+
+**Images:**
+- Always include descriptive `alt` text for meaningful images
+- Use empty `alt=""` for decorative images
+- Describe content, not the image itself
+- For complex images, use `<figcaption>` or long descriptions
+
+**Forms:**
+- Always associate labels with inputs using `for` and `id`
+- Use `aria-required="true"` for required fields
+- Use `aria-invalid` and `aria-describedby` for error states
+- Provide clear, accessible error messages
+- Group related fields with `<fieldset>` and `<legend>`
+
+**Keyboard Navigation:**
+- All interactive elements must be keyboard accessible
+- Handle `Enter` and `Space` keys for buttons
+- Handle `Arrow` keys for custom components (menus, carousels)
+- Maintain logical tab order
+- Never use `tabindex > 0`
+- Provide visible focus indicators (use Tailwind `focus:` utilities)
+
+**Color and Contrast:**
+- Minimum 4.5:1 contrast ratio for normal text
+- Minimum 3:1 contrast ratio for large text (18pt+)
+- Don't rely on color alone to convey information
+- Use icons, text, or patterns in addition to color
+
+**Focus Management:**
+- Always provide visible focus indicators
+- Implement skip links for main content: `<a href="#main-content" class="sr-only focus:not-sr-only">Skip to main content</a>`
+- Manage focus in modals and dynamic content
+- Don't remove focus outlines without alternatives
+
+**Testing:**
+- Run `yarn lint` to check for a11y issues (eslint-plugin-jsx-a11y)
+- Test with keyboard only (Tab, Enter, Space, Arrow keys)
+- Test with screen readers
+- Check color contrast with browser dev tools
+- Test with browser zoom at 200%
+
+### SEO
+- Include proper meta tags in layouts
+- Use descriptive page titles
+- Add meta descriptions
+- Use semantic HTML structure
+- Include Open Graph tags for social sharing
+
+### Error Handling
+- Use TypeScript for compile-time error prevention
+- Handle edge cases explicitly
+- Provide fallback values for optional props
+- Use optional chaining for nested properties
+
+## Commands Reference
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn preview` - Preview production build
+- `yarn lint` - Run ESLint
+- `yarn lint:fix` - Fix ESLint errors automatically
+- `yarn format` - Format code with Prettier
+- `yarn format:check` - Check code formatting
+- `yarn commit` - Interactive commit with Commitizen
+
+## When Writing Code
+1. **Always use TypeScript** - No JavaScript files unless absolutely necessary
+2. **Follow the file structure** - Place files in appropriate directories
+3. **Use Tailwind CSS** - Avoid custom CSS unless Tailwind can't handle it
+4. **Write accessible HTML** - Use semantic elements and ARIA when needed
+5. **Keep components small** - Extract logic into utilities or smaller components
+6. **Type everything** - Define interfaces for props and function signatures
+7. **Run linters** - Fix ESLint warnings and errors
+8. **Format code** - Use Prettier to maintain consistent formatting
+9. **Test locally** - Run `yarn dev` to verify changes work
+10. **Follow commit conventions** - Use `yarn commit` for proper commit messages
+
+## Common Patterns
+
+### Creating a New Page
+1. Create file in `src/pages/` (e.g., `about.astro`)
+2. Import and use `BaseLayout` or create custom layout
+3. Add page-specific content
+4. Route is automatically created based on filename
+
+### Creating a Component
+1. Create file in `src/components/` with PascalCase name
+2. Define TypeScript interface for props
+3. Implement component logic
+4. Export as default or named export
+5. Import where needed
+
+### Adding Styles
+1. Use Tailwind utility classes in components
+2. For global styles, add to `src/styles/global.css`
+3. For component-specific styles, use `<style>` tag in Astro components
+4. Avoid creating separate CSS files unless necessary
+
+## Things to Avoid
+- ❌ Don't use Emotion or CSS-in-JS (migrating to Tailwind)
+- ❌ Don't create JavaScript files (use TypeScript)
+- ❌ Don't use `any` type (use proper types or `unknown`)
+- ❌ Don't commit without running linters
+- ❌ Don't use inline styles (use Tailwind classes)
+- ❌ Don't ignore TypeScript errors
+- ❌ Don't create files in `_prev/` (that's old code)
+- ❌ Don't use `var` (use `const` or `let`)
+- ❌ **Don't create inaccessible components** - Always include proper ARIA, keyboard support, and semantic HTML
+- ❌ Don't use `<div>` or `<span>` for interactive elements without proper roles and keyboard handlers
+- ❌ Don't skip heading levels (h1 → h3 without h2)
+- ❌ Don't use images without alt text
+- ❌ Don't rely on color alone to convey information
+- ❌ Don't remove focus outlines without alternatives
+
+## Project-Specific Notes
+- This project is a portfolio website
+- Migrating from Next.js + Emotion to Astro + Tailwind
+- Old code is in `_prev/` folder - ignore it
+- Focus on performance and accessibility
+- Maintain clean, semantic HTML structure
+

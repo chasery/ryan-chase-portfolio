@@ -16,7 +16,7 @@ export default function Skills(): React.ReactElement {
         <p>{section.description}</p>
         <IconGrid icons={section.skills} maxColumns={3} />
         <ButtonGroup single={true}>
-          <Button path='/pdf/ryan-chase-resume.pdf' text='Download Resume' />
+          <Button path="/pdf/ryan-chase-resume.pdf" text="Download Resume" />
         </ButtonGroup>
       </section>
     ));

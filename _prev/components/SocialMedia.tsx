@@ -44,7 +44,7 @@ export default function SocialMedia(): React.ReactElement {
   const renderNavItems = (socialDetails: SocialDetail[]) => {
     return socialDetails.map(({ path, icon }: SocialDetail, i) => (
       <SocialMediaItem key={i}>
-        <SocialMediaLink href={path} target='_blank'>
+        <SocialMediaLink href={path} target="_blank">
           <Icon {...icon} />
         </SocialMediaLink>
       </SocialMediaItem>

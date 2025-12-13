@@ -111,7 +111,7 @@ export default function Header({
       <MenuControl onClick={handleOpenMenu}>
         <Icon
           label={NAV_OPEN_TITLE}
-          path='/icons/menu.svg'
+          path="/icons/menu.svg"
           width={31}
           height={22}
           alt={NAV_OPEN_DESCRIPTION}
@@ -127,7 +127,7 @@ export default function Header({
             <MenuControl onClick={handleCloseMenu}>
               <Icon
                 label={NAV_CLOSE_TITLE}
-                path='/icons/close.svg'
+                path="/icons/close.svg"
                 width={24}
                 height={24}
                 alt={NAV_CLOSE_DESCRIPTION}

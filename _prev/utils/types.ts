@@ -1,4 +1,4 @@
-import { IconProps } from "components/IconGrid/Icon";
+import { IconProps } from 'components/IconGrid/Icon';
 
 export interface PageSectionImage {
   path: string;
@@ -25,10 +25,10 @@ export interface Page {
   sections?: PageSection[];
 }
 
-export type Pages = Record<string, Page>
+export type Pages = Record<string, Page>;
 
 export interface SocialDetail {
-  path: string
+  path: string;
   icon: IconProps;
 }
 export type SocialMedia = SocialDetail[];

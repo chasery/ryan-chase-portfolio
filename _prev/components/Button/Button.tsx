@@ -41,7 +41,7 @@ export default function Button({
   );
 
   return (
-    <Button href={path} target='_blank'>
+    <Button href={path} target="_blank">
       {text}
     </Button>
   );
