@@ -20,4 +20,3 @@ This directory is kept for reference only to understand:
 - Asset organization
 
 **Note**: This code is not meant to be runnable. It's preserved solely for reference during the migration.
-
