@@ -1,0 +1,39 @@
+---
+import Header from '../components/Header';
+import Main from '../components/Main';
+import IconGrid from '../components/IconGrid/IconGrid';
+import ButtonGroup from '../components/Button/ButtonGroup';
+import Button from '../components/Button/Button';
+import { pages } from '../utils/constants';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { PageSection } from '../utils/types';
+
+const { title, subtitle, sections = [] } = pages.skills;
+const pageTitle = 'Ryan Chase / Portfolio - Skills';
+---
+
+<BaseLayout title={pageTitle}>
+  <Header title={title} subtitle={subtitle} client:load />
+  <Main client:load>
+    {
+      sections.map((section: PageSection, i) => (
+        <section>
+          <h3>{section.title}</h3>
+          <p>{section.description}</p>
+          {section.skills && (
+            <IconGrid icons={section.skills} maxColumns={3} client:load />
+          )}
+          {i === 0 && (
+            <ButtonGroup single={true} client:load>
+              <Button
+                path="/pdf/ryan-chase-resume.pdf"
+                text="Download Resume"
+                client:load
+              />
+            </ButtonGroup>
+          )}
+        </section>
+      ))
+    }
+  </Main>
+</BaseLayout>

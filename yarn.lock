@@ -647,6 +647,16 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.1.1.tgz#b9da6a878a371829a0502c9b6c1c143ef6663f4d"
   integrity sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==
 
+"@fontsource/antonio@^5.0.0":
+  version "5.2.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/antonio/-/antonio-5.2.8.tgz#0e775440423a31c596352031c72572ca198f78e1"
+  integrity sha512-kDt+PP5i0uj06l8mFfzozVbnYTAmHvedLEIOcT4TDUkBrY8R6N3Lvl2pU48SajpcVyc2xfi7zht0bnBUrVzvPQ==
+
+"@fontsource/roboto@^5.0.0":
+  version "5.2.9"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto/-/roboto-5.2.9.tgz#55092cf992ab8d5082be73b79b42f383a9c0903c"
+  integrity sha512-ZTkyHiPk74B/aj8BZWbsxD5Yu+Lq+nR64eV4wirlrac2qXR7jYk2h6JlLYuOuoruTkGQWNw2fMuKNavw7/rg0w==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
