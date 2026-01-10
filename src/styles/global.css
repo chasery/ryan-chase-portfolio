@@ -1,0 +1,44 @@
+@import './normalize.css';
+@import "tailwindcss";
+@import '@fontsource/antonio/700.css';
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  @apply flex flex-col items-center min-w-screen min-h-screen font-sans font-normal;
+  background-color: #EAEBF0; /* athensGrey */
+  color: #262324; /* thunder */
+}
+
+@media (max-width: 48rem) {
+  body {
+    min-height: fill-available;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply m-0;
+}
+
+h1 {
+  @apply font-bold uppercase;
+  font-family: 'Antonio', sans-serif; /* font-display */
+}
+
+h2,
+h3 {
+  @apply uppercase;
+  font-weight: 300; /* font-light */
+}
+
+p {
+  @apply m-0;
+}
